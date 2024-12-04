@@ -8,10 +8,8 @@ import { useState } from 'react';
 import { menuItems } from '@/data/data';
 
 export default function Header() {
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
- 
   const closeMenu = () => {
     setIsMenuOpen(false);
     document.body.style.overflow = 'auto';
@@ -51,10 +49,7 @@ export default function Header() {
         <span className={styles.line}></span>
       </div>
 
-      <MobMenu
-        isMenuOpen={isMenuOpen}
-        closeMenu={closeMenu}
-      />
+      <MobMenu isMenuOpen={isMenuOpen} closeMenu={closeMenu} />
     </header>
   );
 }
