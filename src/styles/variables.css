@@ -1,0 +1,40 @@
+:root {
+  --font_inter: 'Inter', sans-serif;
+  --font_fredoka: 'Fredoka', sans-serif;
+
+  --background: #ffffff;
+  --foreground: #fff4e4;
+  --main_color: #eb8a36;
+  --main_text_color: #000000;
+  --second_text_color: #ffffff;
+
+  --fs_small: 14px;
+  --fs_xsmall: 16px;
+  --fs_medium: 18px;
+  --fs_large: 22px;
+  --fs_xlarge: 32px;
+  --fs_mxlarge: 40px;
+  --fs_xxlarge: 64px;
+  --fs_xxxlarge: 72px;
+
+  --mobile: 328px;
+  --mobile_l: 360px;
+  --mobile_xl: 475px;
+  --tablet: 768px;
+  --laptop: 1024px;
+  --desktop: 1328px;
+
+  --container: 91.1%;
+  --container_mob: 85%;
+
+  --swiper-pagination-color: #008aff;
+  --swiper-pagination-bullet-size: 12px;
+  --swiper-pagination-bullet-width: 12px;
+  --swiper-pagination-bullet-height: 12px;
+  --swiper-pagination-bullet-inactive-color: #fff;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 6px;
+  --swiper-pagination-bullet-vertical-gap: 6px;
+  --swiper-pagination-bottom: -40px;
+}
