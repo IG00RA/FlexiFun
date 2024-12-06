@@ -1,7 +1,7 @@
 .await {
   width: var(--container);
   margin: 0 auto;
-  padding: 0;
+  padding-bottom: 96px;
 
   & button {
     margin: 0 auto;

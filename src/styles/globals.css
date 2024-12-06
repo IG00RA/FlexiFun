@@ -70,10 +70,10 @@ img {
 }
 
 .swiper-pagination-bullet-active {
-  box-shadow: 0px 4px 10px 0px #008aff4d;
+  box-shadow: 0px 4px 10px 0px #ffffff4d;
 }
 
 .swiper-pagination-bullet:hover {
-  background-color: var(--main_color);
-  box-shadow: 0px 4px 10px 0px #008aff4d;
+  background-color: var(--main_text_color);
+  box-shadow: 0px 4px 10px 0px #ffffff4d;
 }

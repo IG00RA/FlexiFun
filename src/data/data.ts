@@ -7,6 +7,15 @@ import reas2 from '../img/reasons/2.webp';
 import reas3 from '../img/reasons/3.webp';
 import reas4 from '../img/reasons/4.webp';
 
+import slider1 from '../img/slider/1.webp';
+import slider2 from '../img/slider/2.webp';
+import slider3 from '../img/slider/3.webp';
+import slider4 from '../img/slider/4.webp';
+import slider5 from '../img/slider/5.webp';
+import slider6 from '../img/slider/6.webp';
+import slider7 from '../img/slider/7.webp';
+import slider8 from '../img/slider/8.webp';
+
 export const heroItems = [
   {
     text: {
@@ -102,4 +111,24 @@ export const awaitItems = [
   ,
   'Na konci je jedinečná príležitosť cítiť sa ako súčasť tímu, ktorý zachraňuje Zem.',
   ,
+];
+
+export const includedItems = [
+  'Zostavte a vyfarbite 16 figúrok zvierat.',
+  'Mapa sveta s prírodnými zónami.',
+  'Príbeh o záchrane savany.',
+  'Biologické fakty a pokyny krok za krokom.',
+  'Interaktívne úlohy, ktoré vás vtiahnu do príbehu.',
+  'Tréningová karta herných mechanizmov.',
+];
+
+export const slideItems = [
+  slider1,
+  slider2,
+  slider3,
+  slider4,
+  slider5,
+  slider6,
+  slider7,
+  slider8,
 ];

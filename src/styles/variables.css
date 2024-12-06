@@ -27,14 +27,14 @@
   --container: 91.1%;
   --container_mob: 85%;
 
-  --swiper-pagination-color: #008aff;
-  --swiper-pagination-bullet-size: 12px;
-  --swiper-pagination-bullet-width: 12px;
-  --swiper-pagination-bullet-height: 12px;
+  --swiper-pagination-color: #000;
+  --swiper-pagination-bullet-size: 10.8px;
+  --swiper-pagination-bullet-width: 10.8px;
+  --swiper-pagination-bullet-height: 5.2px;
   --swiper-pagination-bullet-inactive-color: #fff;
   --swiper-pagination-bullet-inactive-opacity: 1;
   --swiper-pagination-bullet-opacity: 1;
-  --swiper-pagination-bullet-horizontal-gap: 6px;
-  --swiper-pagination-bullet-vertical-gap: 6px;
-  --swiper-pagination-bottom: -40px;
+  --swiper-pagination-bullet-horizontal-gap: 1.8px;
+  --swiper-pagination-bullet-vertical-gap: 1.8px;
+  --swiper-pagination-bullet-border-radius: 6.8px;
 }

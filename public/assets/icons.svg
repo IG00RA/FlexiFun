@@ -59,5 +59,12 @@
 <symbol id="icon-arrow_r" viewBox="0 0 32 32">
 <path fill="#19c1b6" style="fill: var(--color4, #19c1b6)" d="M11.833 3.867l11.233 11.2c0.133 0.133 0.228 0.278 0.284 0.433s0.084 0.322 0.083 0.5c0 0.178-0.028 0.344-0.083 0.5s-0.15 0.3-0.284 0.433l-11.233 11.233c-0.311 0.311-0.7 0.467-1.167 0.467s-0.867-0.167-1.2-0.5c-0.333-0.333-0.5-0.722-0.5-1.167s0.167-0.833 0.5-1.167l9.8-9.8-9.8-9.8c-0.311-0.311-0.467-0.695-0.467-1.151s0.167-0.85 0.5-1.183c0.333-0.333 0.722-0.5 1.167-0.5s0.833 0.167 1.167 0.5z"></path>
 </symbol>
+<symbol id="icon-play" viewBox="0 0 32 32">
+<path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.5006" d="M24.438 16.088c0 4.639-3.761 8.4-8.4 8.4s-8.4-3.761-8.4-8.4c0-4.639 3.761-8.4 8.4-8.4s8.4 3.761 8.4 8.4z"></path>
+<path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.8343" d="M14.409 13.871l4.276 2.469-4.276 2.469v-4.938z"></path>
+</symbol>
+<symbol id="icon-arrow_slider" viewBox="0 0 19 32">
+<path d="M1.771 15.135c-0.815 0.815-0.815 2.136 0 2.951l13.281 13.281c0.815 0.815 2.136 0.815 2.951 0s0.815-2.136 0-2.951l-11.806-11.806 11.806-11.806c0.815-0.815 0.815-2.136 0-2.951s-2.136-0.815-2.951 0l-13.281 13.281zM5.72 14.523h-2.473v4.174h2.473v-4.174z"></path>
+</symbol>
 </defs>
 </svg>
