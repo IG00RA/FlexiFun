@@ -3,10 +3,6 @@
   margin: 0 auto;
   padding: 96px 0;
 
-  & button {
-    margin: 0 auto;
-  }
-
   @media (min-width: 768px) {
     position: relative;
     padding-top: 140px;

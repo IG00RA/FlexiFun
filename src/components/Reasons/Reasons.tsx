@@ -7,9 +7,9 @@ export default function Reasons() {
   return (
     <section className={styles.reasons}>
       <div className={styles.container}>
-        <h1 className={styles.header}>
+        <h2 className={styles.header}>
           4 dôvody, prečo si rodičia vyberajú FlexiFun
-        </h1>
+        </h2>
 
         <ul className={styles.list}>
           {reasonsItems.map((item, index) => (

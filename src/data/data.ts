@@ -85,3 +85,21 @@ export const reasonsItems = [
     },
   },
 ];
+
+export const aboutItems = [
+  'Príbeh o zvieratách, ktoré sa spoja, aby zachránili svoj ekosystém.',
+  ,
+  'Zábavné fakty o prírode a zvieratách z celého sveta.',
+  ,
+  'Interaktívne úlohy, ktoré premenia učenie na zábavnú hru.',
+  ,
+];
+
+export const awaitItems = [
+  'Spolu s postavičkami z rozprávky bude dieťa zbierať 3D postavičky zvierat a umiestňovať ich na mapu sveta.',
+  ,
+  'Keď sa ponorí do príbehu, pochopí, že je dôležité starať sa o prírodu, a stane sa skutočným hrdinom pre našu planétu.',
+  ,
+  'Na konci je jedinečná príležitosť cítiť sa ako súčasť tímu, ktorý zachraňuje Zem.',
+  ,
+];

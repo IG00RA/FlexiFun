@@ -21,6 +21,10 @@
 .container {
   width: var(--container);
   margin: 0 auto;
+
+  & button {
+    margin: 0;
+  }
 }
 
 .text {

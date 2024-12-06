@@ -6,7 +6,7 @@ import { importantItems } from '@/data/data';
 export default function Important() {
   return (
     <section className={styles.important}>
-      <h1 className={styles.header}>Prečo je to pre vaše dieťa dôležité</h1>
+      <h2 className={styles.header}>Prečo je to pre vaše dieťa dôležité</h2>
       <p className={styles.text}>Učenie hrou - cesta k budúcemu úspechu</p>
       <ul className={styles.list}>
         {importantItems.map((item, index) => (

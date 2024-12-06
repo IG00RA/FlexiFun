@@ -77,7 +77,7 @@ export default function Form() {
             <p>{t('Form.headerText')}</p>
           </div>
           <div className={styles.header_wrap}>
-            <h1 className={styles.header}>{t('Form.header')}</h1>
+            <h2 className={styles.header}>{t('Form.header')}</h2>
             <Image
               src={logoBack}
               width={0}

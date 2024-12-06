@@ -1,5 +1,6 @@
 .button {
   display: block;
+  margin: 0 auto;
   padding: 18px 40px;
   cursor: pointer;
   border-radius: 20px;
