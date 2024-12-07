@@ -16,6 +16,19 @@ import slider6 from '../img/slider/6.webp';
 import slider7 from '../img/slider/7.webp';
 import slider8 from '../img/slider/8.webp';
 
+import feed1 from '../img/feedback/1.webp';
+import feed2 from '../img/feedback/2.webp';
+import feed3 from '../img/feedback/3.webp';
+import feed4 from '../img/feedback/4.webp';
+import feed5 from '../img/feedback/5.webp';
+import feed6 from '../img/feedback/6.webp';
+import feed7 from '../img/feedback/7.webp';
+import feed8 from '../img/feedback/8.webp';
+import feed9 from '../img/feedback/9.webp';
+import feed10 from '../img/feedback/10.webp';
+import feed11 from '../img/feedback/11.webp';
+import feed12 from '../img/feedback/12.webp';
+
 export const heroItems = [
   {
     text: {
@@ -131,4 +144,102 @@ export const slideItems = [
   slider6,
   slider7,
   slider8,
+];
+
+export const howWorksItems = [
+  {
+    numb: '1',
+    header: 'Zbierajte figúrky',
+    text: 'Rozvíjajte motorické zručnosti a tvorivé schopnosti.',
+  },
+  {
+    numb: '2',
+    header: 'Ponorte sa do histórie.',
+    text: 'Zistite, ako zvieratá zachraňujú svoj ekosystém.',
+  },
+  {
+    numb: '3',
+    header: 'Preskúmajte ekosystémy.',
+    text: 'Umiestnite obrázky na mapu podľa rozprávania a preskúmajte biotopy.',
+  },
+  {
+    numb: '4',
+    header: 'Staňte sa hrdinom prírody.',
+    text: 'Naučte sa riešiť ekologické problémy spolu so zvieratami.',
+  },
+];
+
+export const feedbackItems = [
+  {
+    span: 'Zdenka',
+    head: 'environmentálna pedagogička',
+    img: feed1,
+    text: 'Nie je to len stavebnica, ale skutočný vzdelávací nástroj pre predškolákov a školákov.',
+  },
+  {
+    span: 'Zlatica',
+    head: 'mama 6-ročného Mareka',
+    img: feed2,
+    text: 'Súpravu používam na hodinách ekológie. Deti sa rady učia a zároveň sa hrajú',
+  },
+  {
+    span: 'Vlasta',
+    head: 'učiteľka materskej školy',
+    img: feed3,
+    text: 'Skvelý nástroj na rozvoj environmentálneho myslenia u detí. Odporúčam ho kolegom',
+  },
+  {
+    span: 'Tatiana',
+    head: 'vedúca detského centra',
+    img: feed4,
+    text: 'V našom vzdelávacom centre sa táto súprava stala medzi deťmi obľúbenou. Učia sa a ani si to nevšimnúx`',
+  },
+  {
+    span: 'Božena',
+    head: 'mama Kristíny',
+    img: feed5,
+    text: 'Súpravu používam na hodinách ekológie. Deti sa rady učia a zároveň sa hrajú',
+  },
+  {
+    span: 'Miloš',
+    head: 'otec 3-ročného Jozefa',
+    img: feed6,
+    text: 'Súpravu sme kúpili nášmu synovi k narodeninám. Spoločne sme zbierali zvieratká, čítali príbeh, priraďovali postavičky k mape.',
+  },
+  {
+    span: 'Branislav',
+    head: 'otec 6-ročného Mateja',
+    img: feed7,
+    text: 'Súpravu používam na hodinách ekológie. Deti sa rady učia a zároveň sa hrajú',
+  },
+  {
+    span: 'Lenka',
+    head: 'mama 5-ročnej Avy',
+    img: feed8,
+    text: 'Teraz moja dcéra organizuje výstavy svojich figúrok pre celú rodinu a rozpráva o každom zvierati',
+  },
+  {
+    span: 'Dagmar',
+    head: 'mama 4-ročného Samuela',
+    img: feed9,
+    text: 'Môj syn zbožňuje zbieranie figúrok! Je na seba hrdý po každom vyriešenom probléme',
+  },
+  {
+    span: 'Petronela',
+    head: 'mama 4-ročnej Michaely',
+    img: feed10,
+    text: 'Moja dcéra sa predtým o zvieratá nezaujímala, ale teraz si každý deň pýta nový príbeh',
+  },
+  {
+    span: 'Ludmila',
+    head: 'mama 3-ročného Tomasza',
+    img: feed11,
+    text: 'Nikdy som si nemyslel, že obyčajná hra môže byť pre dieťa taká pútavá. Teraz vieme všetko o klimatických pásmach!',
+  },
+  {
+    span: 'Stanislava',
+    head: 'mama 6-ročnej Zuzany',
+    img: feed12,
+    text: 'Dieťa je z kartičiek so zvieratkami nadšené! Každý večer vymýšľa nové príbehy o ich dobrodružstvách',
+  },
 ];

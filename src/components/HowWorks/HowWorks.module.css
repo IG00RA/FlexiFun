@@ -1,0 +1,120 @@
+.howWorks {
+  width: var(--container);
+  margin: 0 auto;
+  padding: 96px 0;
+
+  & button {
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    position: relative;
+    padding-top: 140px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 190px;
+    max-width: var(--desktop);
+    padding-bottom: 120px;
+  }
+}
+
+.imgWrap {
+  width: 100%;
+  aspect-ratio: 328/340;
+  background-image: url('../../img/howWorks/line.svg'),
+    url('../../img/howWorks/back.webp'), url('../../img/howWorks/heart.svg');
+  background-repeat: no-repeat;
+  background-position: bottom 32px right 32px, center top 38px, center top;
+  background-size: 65px 45px, 85% 82%, 100% 100%;
+  margin-bottom: 18px;
+}
+
+.header {
+  font-weight: 700;
+  line-height: 1.26;
+  letter-spacing: 0.03em;
+  text-align: center;
+  font-size: var(--fs_xlarge);
+  margin-bottom: 2px;
+}
+
+.topWrap {
+  padding: 24px 16px;
+  border-radius: 16px;
+  background-color: var(--main_color);
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.numbWrap {
+  margin-top: 3px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: var(--second_text_color);
+  font-family: Fredoka;
+  font-size: var(--fs_xlarge);
+  font-weight: 500;
+  line-height: 1.66;
+  letter-spacing: 0.03em;
+}
+
+.topText {
+  font-size: var(--fs_large);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  color: var(--second_text_color);
+}
+
+.list {
+  margin-bottom: 40px;
+  & li {
+    margin-bottom: 16px;
+    display: flex;
+    gap: 16px;
+    padding: 24px 16px;
+    border: 1px solid #dfdfdf;
+    border-radius: 18px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.numbWrapList {
+  margin-top: 4px;
+  width: 48px;
+  height: 48px;
+  border: 2.93px solid var(--main_text_color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: var(--second_text_color);
+  font-size: var(--fs_xlarge);
+  font-weight: 500;
+  line-height: 1.66;
+  letter-spacing: 0.03em;
+}
+
+.parHead {
+  font-size: var(--fs_large);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+
+.par {
+  font-size: var(--fs_xsmall);
+  letter-spacing: 0.03em;
+}
