@@ -4,7 +4,7 @@
   padding: 18px 40px;
   cursor: pointer;
   border-radius: 20px;
-  background-color: var(--main_color);
+  background: var(--main_color);
   color: var(--second_text_color);
   font-size: var(--fs_xsmall);
   font-weight: 500;

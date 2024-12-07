@@ -6,6 +6,7 @@ import Hero from '@/components/Hero/Hero';
 import HowWorks from '@/components/HowWorks/HowWorks';
 import Important from '@/components/Important/Important';
 import Included from '@/components/Included/Included';
+import Quality from '@/components/Quality/Quality';
 import Reasons from '@/components/Reasons/Reasons';
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <Included />
       <HowWorks />
       <Feedback />
+      <Quality />
       <Form />
     </>
   );

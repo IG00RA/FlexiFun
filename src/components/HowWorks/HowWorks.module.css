@@ -42,7 +42,7 @@
 .topWrap {
   padding: 24px 16px;
   border-radius: 16px;
-  background-color: var(--main_color);
+  background: var(--main_color);
   display: flex;
   gap: 16px;
   margin-bottom: 16px;

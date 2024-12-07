@@ -29,6 +29,10 @@ import feed10 from '../img/feedback/10.webp';
 import feed11 from '../img/feedback/11.webp';
 import feed12 from '../img/feedback/12.webp';
 
+import qual1 from '../img/quality/1.webp';
+import qual2 from '../img/quality/2.webp';
+import qual3 from '../img/quality/3.webp';
+
 export const heroItems = [
   {
     text: {
@@ -241,5 +245,20 @@ export const feedbackItems = [
     head: 'mama 6-ročnej Zuzany',
     img: feed12,
     text: 'Dieťa je z kartičiek so zvieratkami nadšené! Každý večer vymýšľa nové príbehy o ich dobrodružstvách',
+  },
+];
+
+export const qualityItems = [
+  {
+    head: 'Materiály šetrné k životnému prostrediu.',
+    img: qual1,
+  },
+  {
+    head: 'Vypracované s prispením pedagógov a odborníkov na životné prostredie.',
+    img: qual2,
+  },
+  {
+    head: 'Certifikované podľa noriem kvality.',
+    img: qual3,
   },
 ];

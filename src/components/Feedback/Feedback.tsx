@@ -20,14 +20,11 @@ export default function Feedback() {
   return (
     <section className={styles.feedback}>
       <div className={styles.container}>
+        <h2 className={styles.header}>Spätná väzba od rodičov a odborníkov</h2>
         <div className={styles.paginationWrap}>
-          <div className={styles.prev}>
-            <Icon name="icon-arrow_slider" width={16} height={22} />
-          </div>
+          <div className={styles.prev}></div>
           <div className={styles.pagination}></div>
-          <div className={styles.next}>
-            <Icon name="icon-arrow_slider" width={16} height={22} />
-          </div>
+          <div className={styles.next}></div>
         </div>
         <Swiper
           navigation={{
@@ -45,9 +42,9 @@ export default function Feedback() {
         >
           {groupedItems.map((group, index) => (
             <SwiperSlide key={index} className={styles.gallery_item}>
-              <div className={styles.slide}>
-                {group.map((item, subIndex) => (
-                  <div key={subIndex} className={styles.card}>
+              {group.map((item, subIndex) => (
+                <div key={subIndex} className={styles.card}>
+                  <div className={styles.imgWrap}>
                     <Image
                       src={item.img}
                       alt={item.head}
@@ -56,14 +53,14 @@ export default function Feedback() {
                       height={0}
                       sizes="100vw"
                     />
-                    <p className={styles.card_text}>{item.text}</p>
-                    <div className={styles.card_footer}>
-                      <span className={styles.card_span}>{item.span}</span>
-                      <h4 className={styles.card_head}>{item.head}</h4>
-                    </div>
                   </div>
-                ))}
-              </div>
+                  <p className={styles.card_text}>{item.text}</p>
+                  <div className={styles.card_footer}>
+                    <span className={styles.card_span}>{item.span}</span>
+                    <h4 className={styles.card_head}>{item.head}</h4>
+                  </div>
+                </div>
+              ))}
             </SwiperSlide>
           ))}
         </Swiper>

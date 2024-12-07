@@ -3,8 +3,12 @@
   --font_fredoka: 'Fredoka', sans-serif;
 
   --background: #ffffff;
-  --foreground: #fff4e4;
-  --main_color: #eb8a36;
+  --foreground: linear-gradient(
+    295.65deg,
+    rgba(226, 118, 23, 0) -5.53%,
+    #fff4e4 -5.52%
+  );
+  --main_color: linear-gradient(106.5deg, #ff9466 -0.23%, #ffb088 100%);
   --main_text_color: #000000;
   --second_text_color: #ffffff;
 

@@ -61,7 +61,7 @@
 .priceWrap {
   width: 165px;
   height: 47px;
-  background-color: var(--main_color);
+  background: var(--main_color);
   border-radius: 23px;
   position: relative;
   margin-bottom: 8px;
@@ -96,7 +96,7 @@
     display: block;
     height: 3px;
     width: 55px;
-    background-color: var(--main_color);
+    background: var(--main_color);
     border-radius: 2px;
   }
 }

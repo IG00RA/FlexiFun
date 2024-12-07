@@ -60,7 +60,7 @@
   color: var(--second_text_color);
   margin: 0 auto;
   padding: 15.5px 24px;
-  background-color: var(--main_color);
+  background: var(--main_color);
   border-radius: 0 0 32px 32px;
   white-space: nowrap;
 }

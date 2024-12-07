@@ -19,7 +19,7 @@
 }
 
 .parWrap {
-  background-color: var(--main_color);
+  background: var(--main_color);
   padding: 24px;
 
   & button {
