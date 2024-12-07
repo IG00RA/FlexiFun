@@ -262,3 +262,46 @@ export const qualityItems = [
     img: qual3,
   },
 ];
+
+export const questionsItems = [
+  {
+    head: 'Aký vek je vhodný na zápis?',
+    numb: '1',
+    text: 'Rozvíjajte motorické zručnosti a tvorivé schopnosti.',
+  },
+  {
+    head: 'Z akých materiálov sú vyrobené?',
+    numb: '2',
+    text: 'Rozvíjajte motorické zručnosti a tvorivé schopnosti.',
+  },
+  {
+    head: 'Dá sa súprava opätovne použiť?',
+    numb: '3',
+    text: 'Rozvíjajte motorické zručnosti a tvorivé schopnosti.',
+  },
+  {
+    head: 'Sú materiály bezpečné?',
+    numb: '4',
+    text: 'Rozvíjajte motorické zručnosti a tvorivé schopnosti.',
+  },
+  {
+    head: 'Obsahuje súprava nápovedy k úlohám?',
+    numb: '5',
+    text: 'Rozvíjajte motorické zručnosti a tvorivé schopnosti.',
+  },
+  {
+    head: 'Ako dlho trvá zostavenie jednej figúrky?',
+    numb: '6',
+    text: 'Umiestnite obrázky na mapu podľa rozprávania a preskúmajte biotopy.',
+  },
+  {
+    head: 'Aké témy sa v príbehu objavujú?',
+    numb: '7',
+    text: 'Umiestnite obrázky na mapu podľa rozprávania a preskúmajte biotopy.',
+  },
+  {
+    head: 'Dokáže dieťa vykonávať úlohy samostatne?',
+    numb: '8',
+    text: 'Umiestnite obrázky na mapu podľa rozprávania a preskúmajte biotopy.',
+  },
+];
