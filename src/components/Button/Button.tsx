@@ -2,13 +2,13 @@ import React from 'react';
 import styles from './Button.module.css';
 
 interface ButtonProps {
-  text: string;
+  children: React.ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({ text }) => {
+const Button: React.FC<ButtonProps> = ({ children }) => {
   return (
     <button className={`${styles.button}`} type="button">
-      {text}
+      {children}
     </button>
   );
 };

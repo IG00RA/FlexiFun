@@ -69,7 +69,7 @@ export default function Included() {
             <Icon name="icon-arrow_slider" width={16} height={22} />
           </div>
         </div>
-        <Button text="Objednať sadu" />
+        <Button>Objednať sadu</Button>
       </div>
     </section>
   );

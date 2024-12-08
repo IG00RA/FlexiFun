@@ -13,7 +13,7 @@ export default function Await() {
           </li>
         ))}
       </ul>
-      <Button text="Objednať sadu" />
+      <Button>Objednať sadu</Button>
     </section>
   );
 }

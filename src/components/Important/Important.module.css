@@ -18,7 +18,6 @@
 .text {
   text-align: center;
   font-size: var(--fs_xsmall);
-  font-weight: 600;
   line-height: 1.66;
   letter-spacing: 0.03em;
   margin-bottom: 40px;

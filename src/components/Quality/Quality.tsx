@@ -26,7 +26,7 @@ export default function Quality() {
         ))}
       </ul>
 
-      <Button text="Objednať sadu" />
+      <Button>Objednať sadu</Button>
     </section>
   );
 }

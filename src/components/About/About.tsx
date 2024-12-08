@@ -19,7 +19,7 @@ export default function About() {
           </li>
         ))}
       </ul>
-      <Button text="Objednať sadu" />
+      <Button>Objednať sadu</Button>
     </section>
   );
 }

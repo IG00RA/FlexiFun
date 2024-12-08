@@ -32,7 +32,7 @@ export default function Footer() {
         >
           Zmluva s používateľom
         </a>
-        <Button text="Kúpiť" />
+        <Button>Kúpiť</Button>
       </div>
     </section>
   );

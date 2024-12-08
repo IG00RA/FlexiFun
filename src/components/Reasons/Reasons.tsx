@@ -43,7 +43,7 @@ export default function Reasons() {
           ))}
         </ul>
 
-        <Button text="Objednať sadu" />
+        <Button>Objednať sadu</Button>
       </div>
     </section>
   );

@@ -2,6 +2,9 @@ import styles from './Hero.module.css';
 import hero from '../../img/hero/heroMob.webp';
 import Image from 'next/image';
 import Button from '../Button/Button';
+import TSvgMedium from '@/helpers/TSvgMedium';
+import TSvgSmall from '@/helpers/TSvgSmall';
+import TSvg from '@/helpers/TSvg';
 
 export default function Hero() {
   return (
@@ -9,7 +12,9 @@ export default function Hero() {
       <div className={styles.container}>
         <p className={styles.text}>FlexiFun - divoká príroda savany</p>
         <h1 className={styles.header}>
-          Objavte svet prírody a hrdinských dobrodružstiev pre svoje dieťa!
+          Objavte svet prírody a hrdinských dobrodružstiev pre svoje die
+          <TSvg />
+          a!
         </h1>
         <Image
           className={styles.heroImg}
@@ -23,13 +28,20 @@ export default function Hero() {
         <p className={styles.par}>
           Vzdelávacia hracia súprava, v ktorej sa učenie biológie stáva
           vzrušujúcim dobrodružstvom, ktoré aktivuje všetky kľúčové oblasti
-          rozvoja vášho dieťaťa.
+          rozvoja vášho die
+          <TSvgSmall line={true} />
+          a<TSvgSmall line={true} />
+          a.
         </p>
         <div className={styles.priceWrap}>
           <span className={styles.styledPrice}>65€</span>
           <span className={styles.styledPriceSecond}>20€</span>
         </div>
-        <Button text="Dajte dieťaťu výlet" />
+        <Button>
+          Dajte die
+          <TSvgMedium color="#ffffff" />a
+          <TSvgMedium color="#ffffff" />u výlet
+        </Button>
       </div>
     </section>
   );

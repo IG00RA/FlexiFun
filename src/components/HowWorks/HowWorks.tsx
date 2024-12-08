@@ -24,7 +24,7 @@ export default function HowWorks() {
           </li>
         ))}
       </ul>
-      <Button text="Objednať sadu" />
+      <Button>Objednať sadu</Button>
     </section>
   );
 }

@@ -47,7 +47,7 @@ export default function Questions() {
           </li>
         ))}
       </ul>
-      <Button text="Objednať sadu" />
+      <Button>Objednať sadu</Button>
     </section>
   );
 }

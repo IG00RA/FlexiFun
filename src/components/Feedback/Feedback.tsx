@@ -65,7 +65,7 @@ export default function Feedback() {
           ))}
         </Swiper>
 
-        <Button text="Objednať sadu" />
+        <Button>Objednať sadu</Button>
       </div>
     </section>
   );

@@ -1,11 +1,8 @@
 .hero {
   width: 100%;
   padding: 16px 0 60px;
-  background: linear-gradient(
-    290.03deg,
-    rgba(226, 118, 23, 0.6) -4.99%,
-    #fff4e4 44.78%
-  );
+  background: linear-gradient(107.3deg, #ffffff -16.22%, #fff4e4 97.41%);
+
   @media (min-width: 768px) {
     position: relative;
     padding-top: 140px;
@@ -32,7 +29,10 @@
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: 0.03em;
-  color: var(--main_color);
+  background: var(--main_color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 8px;
 }
 
