@@ -7,7 +7,7 @@ import CSvg from '@/helpers/CSvg';
 
 export default function About() {
   return (
-    <section className={styles.about}>
+    <section id="about" className={styles.about}>
       <div className={styles.imgWrap}></div>
       <h2 className={styles.header}>
         O <CSvg />

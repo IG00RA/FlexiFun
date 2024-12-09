@@ -118,6 +118,8 @@
   border-radius: 12px;
   position: relative;
   cursor: pointer;
+  z-index: 1001;
+  transition: margin 0.3s ease;
 
   @media (min-width: 920px) {
     display: none;
@@ -127,11 +129,11 @@
 .line {
   display: block;
   width: 16px;
-  height: 1.4px;
+  height: 1.6px;
   background-color: var(--background);
   border-radius: 1px;
   position: absolute;
-  transition: all 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .line:nth-child(1) {
@@ -148,6 +150,7 @@
 
 .burger_open .line:nth-child(1) {
   transform: rotate(45deg);
+  width: 20px;
   top: 18px;
 }
 
@@ -156,6 +159,12 @@
 }
 
 .burger_open .line:nth-child(3) {
+  width: 20px;
   transform: rotate(-45deg);
   top: 18px;
+}
+
+.burger_wrap.burger_open {
+  border: 1px solid #ffffff;
+  margin-top: 24px;
 }

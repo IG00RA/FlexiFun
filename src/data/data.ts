@@ -45,9 +45,9 @@ export const heroItems = [
 ];
 
 export const menuItems = [
-  { label: 'Ako nábor ovplyvňuje vývoj', href: '#advantages' },
+  { label: 'Ako nábor ovplyvňuje vývoj', href: '#reasons' },
   { label: 'Čo obsahuje táto sada', href: '#about' },
-  { label: 'Čo je súčasťou súpravy', href: '#program' },
+  { label: 'Čo je súčasťou súpravy', href: '#included' },
   { label: 'Recenzie', href: '#feedback' },
 ];
 
@@ -264,41 +264,46 @@ export const questionsItems = [
   {
     head: 'Aký vek je vhodný na zápis?',
     numb: '1',
-    text: 'Rozvíjajte motorické zručnosti a tvorivé schopnosti.',
+    text: 'Od štyroch rokov',
   },
   {
     head: 'Z akých materiálov sú vyrobené?',
     numb: '2',
-    text: 'Rozvíjajte motorické zručnosti a tvorivé schopnosti.',
+    text: 'Ekologická lepenka, papier a biologicky rozložiteľné plasty.',
   },
   {
     head: 'Dá sa súprava opätovne použiť?',
     numb: '3',
-    text: 'Rozvíjajte motorické zručnosti a tvorivé schopnosti.',
+    text: 'Áno, všetky figúrky a mapa sveta sú vyrobené z odolných materiálov, ktoré sa dajú opakovane použiť.',
   },
   {
     head: 'Sú materiály bezpečné?',
     numb: '4',
-    text: 'Rozvíjajte motorické zručnosti a tvorivé schopnosti.',
+    text: 'Áno, súprava je vyrobená z ekologických a pre deti bezpečných materiálov certifikovaných podľa noriem kvality.',
   },
   {
     head: 'Obsahuje súprava nápovedy k úlohám?',
     numb: '5',
-    text: 'Rozvíjajte motorické zručnosti a tvorivé schopnosti.',
+    text: 'Áno, v knižke s príbehmi sú pokyny krok za krokom a nápovedy, ktoré pomôžu vášmu dieťaťu pri riešení úloh.',
   },
   {
     head: 'Ako dlho trvá zostavenie jednej figúrky?',
     numb: '6',
-    text: 'Umiestnite obrázky na mapu podľa rozprávania a preskúmajte biotopy.',
+    text: 'Zostavenie figúrky trvá v priemere 5 až 30 minút v závislosti od zložitosti figúrky a veku dieťaťa.',
   },
   {
     head: 'Aké témy sa v príbehu objavujú?',
     numb: '7',
-    text: 'Umiestnite obrázky na mapu podľa rozprávania a preskúmajte biotopy.',
+    text: 'Príbeh je o priateľstve zvierat, vzájomnej pomoci a ochrane ekosystémov a o tom, ako môžu ľudia pomôcť prírode.',
   },
   {
     head: 'Dokáže dieťa vykonávať úlohy samostatne?',
     numb: '8',
-    text: 'Umiestnite obrázky na mapu podľa rozprávania a preskúmajte biotopy.',
+    text: 'Väčšina detí to zvládne sama, ale mladšie deti môžu potrebovať pomoc rodičov.',
+  },
+  {
+    head: 'Je táto súprava vhodná na vyučovanie v materskej škole?',
+    numb: '9',
+    text: 'Áno, možno ju použiť na hodinách ekológie, biológie a geografie pre najmladšie triedy a predškolské skupiny.',
   },
 ];

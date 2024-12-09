@@ -3,6 +3,7 @@ import styles from './Footer.module.css';
 import Link from 'next/link';
 import Button from '../Button/Button';
 import { menuItems } from '@/data/data';
+import TSvgMedium from '@/helpers/TSvgMedium';
 
 export default function Footer() {
   return (
@@ -32,7 +33,10 @@ export default function Footer() {
         >
           Zmluva s používateľom
         </a>
-        <Button>Kúpiť</Button>
+        <Button>
+          Kúpi
+          <TSvgMedium color="#ffb088" />
+        </Button>
       </div>
     </section>
   );

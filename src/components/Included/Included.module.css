@@ -149,4 +149,5 @@
 .pagination {
   position: static !important;
   width: 116px !important;
+  padding-bottom: 8px;
 }

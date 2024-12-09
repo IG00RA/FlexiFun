@@ -4,7 +4,7 @@ export default function TSvgMedium({
   top = '1px',
 }) {
   return (
-    <div style={{ position: 'relative', display: 'inline-block' }}>
+    <span style={{ position: 'relative', display: 'inline-block' }}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 7 13"
@@ -17,7 +17,7 @@ export default function TSvgMedium({
           fill={color}
         />
       </svg>
-      <div
+      <span
         style={{
           display: line ? 'block' : 'none',
           height: '1px',
@@ -28,6 +28,6 @@ export default function TSvgMedium({
           bottom: '4px',
         }}
       />
-    </div>
+    </span>
   );
 }

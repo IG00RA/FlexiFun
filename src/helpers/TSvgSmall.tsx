@@ -1,6 +1,6 @@
 export default function TSvgSmall({ color = 'black', line = false }) {
   return (
-    <div style={{ position: 'relative', display: 'inline-block' }}>
+    <span style={{ position: 'relative', display: 'inline-block' }}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 6 12"
@@ -13,7 +13,7 @@ export default function TSvgSmall({ color = 'black', line = false }) {
           fill={color}
         />
       </svg>
-      <div
+      <span
         style={{
           display: line ? 'block' : 'none',
           height: '1px',
@@ -24,6 +24,6 @@ export default function TSvgSmall({ color = 'black', line = false }) {
           bottom: '4px',
         }}
       />
-    </div>
+    </span>
   );
 }

@@ -11,6 +11,7 @@ import styles from './Feedback.module.css';
 import Button from '../Button/Button';
 import Icon from '@/helpers/Icon';
 import TSvgMedium from '@/helpers/TSvgMedium';
+import CSvg from '@/helpers/CSvg';
 
 export default function Feedback() {
   const groupedItems = [];
@@ -19,9 +20,13 @@ export default function Feedback() {
   }
 
   return (
-    <section className={styles.feedback}>
+    <section id="feedback" className={styles.feedback}>
       <div className={styles.container}>
-        <h2 className={styles.header}>Spätná väzba od rodičov a odborníkov</h2>
+        <h2 className={styles.header}>
+          Spätná väzba od <br /> rodi
+          <CSvg />
+          ov a odborníkov
+        </h2>
         <div className={styles.paginationWrap}>
           <div className={styles.prev}></div>
           <div className={styles.pagination}></div>

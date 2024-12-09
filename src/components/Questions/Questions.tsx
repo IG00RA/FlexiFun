@@ -6,6 +6,11 @@ import Icon from '@/helpers/Icon';
 import { useState } from 'react';
 import Button from '../Button/Button';
 import TSvgMedium from '@/helpers/TSvgMedium';
+import CBigSvg from '@/helpers/CBigSvg';
+import { replaceSymbol } from '@/helpers/replaceSymbol';
+import CSvg from '@/helpers/CSvg';
+import TSvgSmall from '@/helpers/TSvgSmall';
+import CSvgMedium from '@/helpers/CSvgMedium';
 
 export default function Questions() {
   const [openIndices, setOpenIndices] = useState<number[]>([]);
@@ -18,7 +23,10 @@ export default function Questions() {
 
   return (
     <section id="questions" className={styles.questions}>
-      <h2 className={styles.header}>Často kladené otázky</h2>
+      <h2 className={styles.header}>
+        <CBigSvg />
+        asto kladené otázky
+      </h2>
 
       <ul className={styles.list}>
         {questionsItems.map((item, index) => (
@@ -26,7 +34,13 @@ export default function Questions() {
             <div className={styles.mainWrap}>
               <span className={styles.numbWrap}>{item.numb}</span>
 
-              <h3 className={styles.parHead}>{item.head}</h3>
+              <h3 className={styles.parHead}>
+                {replaceSymbol(
+                  item.head,
+                  { t: TSvgMedium, c: CSvgMedium },
+                  { tProps: { top: '2px' }, cProps: { top: '4px' } }
+                )}
+              </h3>
 
               <button
                 type="button"
@@ -43,7 +57,7 @@ export default function Questions() {
                 openIndices.includes(index) ? `${styles.open}` : ''
               }`}
             >
-              {item.text}
+              {replaceSymbol(item.text, { t: TSvgSmall })}
             </p>
           </li>
         ))}

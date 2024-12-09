@@ -9,7 +9,7 @@ import TSvgSmall from '@/helpers/TSvgSmall';
 
 export default function Reasons() {
   return (
-    <section className={styles.reasons}>
+    <section id="reasons" className={styles.reasons}>
       <div className={styles.container}>
         <h2 className={styles.header}>
           4 dôvody, pre

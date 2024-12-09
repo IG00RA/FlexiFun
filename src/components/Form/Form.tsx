@@ -1,18 +1,21 @@
 'use client';
 
-import Icon from '@/helpers/Icon';
 import styles from './Form.module.css';
-import { ChangeEvent, FormEvent, useState } from 'react';
-import logoBack from '../../img/form/mail.webp';
-import Image from 'next/image';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import Button from '../Button/Button';
+import TSvgMedium from '@/helpers/TSvgMedium';
 
-export default function Form() {
-  const nicknameRegex = /^@([a-zA-Z0-9_]{3,32})$/;
-
+interface FormProps {
+  toggleForm: () => void;
+}
+export default function Form({ toggleForm }: FormProps) {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     nickname: '',
+    email: '',
+    quantity: 0,
+    communication: '',
   });
 
   const [errors, setErrors] = useState({
@@ -25,78 +28,71 @@ export default function Form() {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
-    // Reset error when user starts typing
     setErrors({ ...errors, [name]: '' });
   };
 
-  // const validateForm = (): boolean => {
-  //   const newErrors = { name: '', phone: '', nickname: '' };
-  //   let isValid = true;
+  const handleQuantityChange = (value: number): void => {
+    const newQuantity = Math.max(0, formData.quantity + value);
+    setFormData({ ...formData, quantity: newQuantity });
+  };
 
-  //   if (!formData.name) {
-  //     newErrors.name = t('Form.errors.nameRequired');
-  //     isValid = false;
-  //   } else if (formData.name.length > 100) {
-  //     newErrors.name = t('Form.errors.nameLength');
-  //     isValid = false;
-  //   }
+  const handleRadioChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    setFormData({ ...formData, communication: e.target.id });
+  };
 
-  //   if (!formData.phone) {
-  //     newErrors.phone = t('Form.errors.phoneRequired');
-  //     isValid = false;
-  //   } else if (!/^\d{9}$/.test(formData.phone)) {
-  //     newErrors.phone = t('Form.errors.phoneFormat');
-  //     isValid = false;
-  //   }
+  const validateForm = (): boolean => {
+    const newErrors = { name: '', phone: '', nickname: '' };
+    let isValid = true;
 
-  //   if (!formData.nickname) {
-  //     newErrors.nickname = t('Form.errors.nickRequired');
-  //     isValid = false;
-  //   } else if (!nicknameRegex.test(formData.nickname)) {
-  //     newErrors.nickname = t('Form.errors.nickFormat');
-  //     isValid = false;
-  //   }
+    if (!formData.name) {
+      newErrors.name = 'Vyžaduje sa meno';
+      isValid = false;
+    }
 
-  //   setErrors(newErrors);
-  //   return isValid;
-  // };
+    if (!formData.phone) {
+      newErrors.phone = 'Vyžaduje sa telefónne číslo';
+      isValid = false;
+    }
 
-  // const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
-  //   e.preventDefault();
-  //   if (validateForm()) {
-  //     console.log('Form submitted:', formData);
-  //   }
-  // };
+    if (!formData.nickname) {
+      newErrors.nickname = 'Priezvisko je povinné';
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    if (validateForm()) {
+      console.log('Form submitted:', formData);
+    }
+  };
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   return (
-    <section className={styles.form}>
-      {/* <div className={styles.container}>
-        <div className={styles.wrap}>
-          <div className={styles.top_wrap}>
-            <Icon name="icon-logoForm" width={48} height={39} />
-            <p>{t('Form.headerText')}</p>
-          </div>
-          <div className={styles.header_wrap}>
-            <h2 className={styles.header}>{t('Form.header')}</h2>
-            <Image
-              src={logoBack}
-              width={0}
-              height={0}
-              sizes="100vw"
-              alt="Form icon"
-              priority
-            />
-          </div>
-        </div>
-        <form className={styles.form_wrap} onSubmit={handleSubmit}>
+    <div className={styles.backDrop}>
+      <div className={styles.form_wrap}>
+        <button className={styles.closeBtn} onClick={toggleForm} type="button">
+          x
+        </button>
+        <h2 className={styles.header}>Formulár žiadosti</h2>
+
+        <form className={styles.form} onSubmit={handleSubmit}>
           <label className={styles.label}>
-            {t('Form.form.name')}
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder={t('Form.form.namePlaceHolder')}
+              placeholder="Názov"
               className={`${styles.input} ${errors.name ? styles.error : ''}`}
               required
             />
@@ -104,34 +100,12 @@ export default function Form() {
           </label>
 
           <label className={styles.label}>
-            {t('Form.form.phone')}
-            <div className={styles.phone_wrap}>
-              <div className={styles.phone_label}>
-                <span>+380</span>
-              </div>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="0993483455"
-                className={`${styles.input} ${
-                  errors.phone ? styles.error : ''
-                }`}
-                required
-              />
-            </div>
-            {errors.phone && <p className={styles.errorText}>{errors.phone}</p>}
-          </label>
-
-          <label className={styles.label}>
-            {t('Form.form.nick')}
             <input
               type="text"
               name="nickname"
               value={formData.nickname}
               onChange={handleChange}
-              placeholder="@nickname"
+              placeholder="Priezvisko"
               className={`${styles.input} ${
                 errors.nickname ? styles.error : ''
               }`}
@@ -142,11 +116,98 @@ export default function Form() {
             )}
           </label>
 
-          <button className={styles.button} type="submit">
-            {t('Form.form.button')}
-          </button>
+          <p className={styles.pricePar}>Počet súprav</p>
+          <div className={styles.priceWrap}>
+            <button
+              className={styles.min}
+              type="button"
+              onClick={() => handleQuantityChange(-1)}
+            ></button>
+            <input
+              className={styles.quantity}
+              type="number"
+              placeholder="2"
+              value={formData.quantity > 0 ? formData.quantity : ''}
+              onChange={e => {
+                const newQuantity = Math.max(0, Number(e.target.value));
+                setFormData({ ...formData, quantity: newQuantity });
+              }}
+            />
+            <button
+              className={styles.plus}
+              type="button"
+              onClick={() => handleQuantityChange(1)}
+            ></button>
+            <span className={styles.priceTotal}>
+              ={formData.quantity * 20}€
+            </span>
+          </div>
+
+          <p className={styles.pricePar}>Spôsob komunikácie</p>
+          <div className={styles.socWrap}>
+            <label>
+              <input
+                type="radio"
+                name="communication"
+                id="telegram"
+                onChange={handleRadioChange}
+                checked={formData.communication === 'telegram'}
+              />
+              Telegram
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="communication"
+                id="whatsApp"
+                onChange={handleRadioChange}
+                checked={formData.communication === 'whatsApp'}
+              />
+              WhatsApp
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="communication"
+                id="viber"
+                onChange={handleRadioChange}
+                checked={formData.communication === 'viber'}
+              />
+              Viber
+            </label>
+          </div>
+
+          <label className={styles.label}>
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Phone number"
+              className={`${styles.input} ${errors.phone ? styles.error : ''}`}
+              required
+            />
+            {errors.phone && <p className={styles.errorText}>{errors.phone}</p>}
+          </label>
+
+          <label className={styles.label}>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="E-mail"
+              className={`${styles.input}`}
+              required
+            />
+          </label>
+
+          <Button type="submit">
+            Dajte die
+            <TSvgMedium color="#ffffff" />a<TSvgMedium color="#ffffff" />u výlet
+          </Button>
         </form>
-      </div> */}
-    </section>
+      </div>
+    </div>
   );
 }

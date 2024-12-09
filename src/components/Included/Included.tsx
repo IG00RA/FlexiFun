@@ -18,7 +18,7 @@ import TSvg from '@/helpers/TSvg';
 
 export default function Included() {
   return (
-    <section className={styles.included}>
+    <section id="included" className={styles.included}>
       <Swiper
         navigation={{
           prevEl: `.${styles.prev}`,

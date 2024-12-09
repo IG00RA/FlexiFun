@@ -2,6 +2,8 @@ import styles from './HowWorks.module.css';
 import Button from '../Button/Button';
 import { howWorksItems } from '@/data/data';
 import TSvgMedium from '@/helpers/TSvgMedium';
+import { replaceSymbol } from '@/helpers/replaceSymbol';
+import TSvgSmall from '@/helpers/TSvgSmall';
 
 export default function HowWorks() {
   return (
@@ -20,7 +22,9 @@ export default function HowWorks() {
             <span className={styles.numbWrapList}>{item.numb}</span>
             <div>
               <h3 className={styles.parHead}>{item.header}</h3>
-              <p className={styles.par}>{item.text}</p>
+              <p className={styles.par}>
+                {replaceSymbol(item.text, { t: TSvgSmall })}
+              </p>
             </div>
           </li>
         ))}
