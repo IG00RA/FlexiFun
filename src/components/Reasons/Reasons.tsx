@@ -2,13 +2,20 @@ import styles from './Reasons.module.css';
 import Image from 'next/image';
 import Button from '../Button/Button';
 import { reasonsItems } from '@/data/data';
+import TSvgMedium from '@/helpers/TSvgMedium';
+import CSvg from '@/helpers/CSvg';
+import { replaceSymbol } from '@/helpers/replaceSymbol';
+import TSvgSmall from '@/helpers/TSvgSmall';
 
 export default function Reasons() {
   return (
     <section className={styles.reasons}>
       <div className={styles.container}>
         <h2 className={styles.header}>
-          4 dôvody, prečo si rodičia vyberajú FlexiFun
+          4 dôvody, pre
+          <CSvg />o si rodi
+          <CSvg />
+          ia vyberajú FlexiFun
         </h2>
 
         <ul className={styles.list}>
@@ -27,7 +34,7 @@ export default function Reasons() {
               </div>
               <ul className={styles.parList}>
                 <li>
-                  <p>{item.text.first}</p>
+                  <p>{replaceSymbol(item.text.first, { t: TSvgSmall })}</p>
                 </li>
                 <li>
                   <p>{item.text.second}</p>
@@ -43,7 +50,10 @@ export default function Reasons() {
           ))}
         </ul>
 
-        <Button>Objednať sadu</Button>
+        <Button>
+          Objedna
+          <TSvgMedium color="#ffffff" /> sadu
+        </Button>
       </div>
     </section>
   );

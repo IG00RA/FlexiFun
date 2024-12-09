@@ -11,6 +11,10 @@ import styles from './Included.module.css';
 import Button from '../Button/Button';
 import { includedItems } from '@/data/data';
 import Icon from '@/helpers/Icon';
+import TSvgMedium from '@/helpers/TSvgMedium';
+import CBigSvg from '@/helpers/CBigSvg';
+import CSvg from '@/helpers/CSvg';
+import TSvg from '@/helpers/TSvg';
 
 export default function Included() {
   return (
@@ -49,7 +53,13 @@ export default function Included() {
         </div>
       </Swiper>
       <div className={styles.parWrap}>
-        <h2 className={styles.header}>Čo je súčasťou súpravy</h2>
+        <h2 className={styles.header}>
+          <CBigSvg color="#ffffff" />o je sú
+          <CSvg color="#ffffff" />
+          as
+          <TSvg color="#ffffff" />
+          ou súpravy
+        </h2>
         <p className={styles.text}>
           Úplné ponorenie do sveta ekológie a tvorivosti
         </p>
@@ -61,15 +71,14 @@ export default function Included() {
           ))}
         </ul>
         <div className={styles.paginationWrap}>
-          <div className={styles.prev}>
-            <Icon name="icon-arrow_slider" width={16} height={22} />
-          </div>
+          <div className={styles.prev}></div>
           <div className={styles.pagination}></div>
-          <div className={styles.next}>
-            <Icon name="icon-arrow_slider" width={16} height={22} />
-          </div>
+          <div className={styles.next}></div>
         </div>
-        <Button>Objednať sadu</Button>
+        <Button>
+          Objedna
+          <TSvgMedium color="#ffb088" /> sadu
+        </Button>
       </div>
     </section>
   );

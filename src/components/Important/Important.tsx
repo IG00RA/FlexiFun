@@ -4,17 +4,9 @@ import Button from '../Button/Button';
 import { importantItems } from '@/data/data';
 import CSvg from '@/helpers/CSvg';
 import TSvg from '@/helpers/TSvg';
-
-const replaceTSymbol = (text: string): React.ReactNode[] => {
-  const parts = text.split('ť');
-  return parts.reduce<React.ReactNode[]>((acc, part, index) => {
-    acc.push(part);
-    if (index < parts.length - 1) {
-      acc.push(<TSvg key={index} />);
-    }
-    return acc;
-  }, []);
-};
+import { replaceSymbol } from '@/helpers/replaceSymbol';
+import TSvgSmall from '@/helpers/TSvgSmall';
+import TSvgMedium from '@/helpers/TSvgMedium';
 
 export default function Important() {
   return (
@@ -38,15 +30,19 @@ export default function Important() {
               priority
             ></Image>
             <div className={styles.listWrap}>
-              <h3 className={styles.parHead}>{replaceTSymbol(item.head)}</h3>
-              <p className={styles.par}>{replaceTSymbol(item.text)}</p>
+              <h3 className={styles.parHead}>
+                {replaceSymbol(item.head, { t: TSvg, c: CSvg })}
+              </h3>
+              <p className={styles.par}>
+                {replaceSymbol(item.text, { t: TSvgSmall })}
+              </p>
             </div>
           </li>
         ))}
       </ul>
       <Button>
         Objedna
-        <TSvg /> sadu
+        <TSvgMedium color="#ffffff" /> sadu
       </Button>
     </section>
   );

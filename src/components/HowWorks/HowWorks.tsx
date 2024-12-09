@@ -1,6 +1,7 @@
 import styles from './HowWorks.module.css';
 import Button from '../Button/Button';
 import { howWorksItems } from '@/data/data';
+import TSvgMedium from '@/helpers/TSvgMedium';
 
 export default function HowWorks() {
   return (
@@ -24,7 +25,10 @@ export default function HowWorks() {
           </li>
         ))}
       </ul>
-      <Button>Objednať sadu</Button>
+      <Button>
+        Objedna
+        <TSvgMedium color="#ffffff" /> sadu
+      </Button>
     </section>
   );
 }

@@ -2,12 +2,17 @@ import styles from './About.module.css';
 import Button from '../Button/Button';
 import { aboutItems } from '@/data/data';
 import Icon from '@/helpers/Icon';
+import TSvgMedium from '@/helpers/TSvgMedium';
+import CSvg from '@/helpers/CSvg';
 
 export default function About() {
   return (
     <section className={styles.about}>
       <div className={styles.imgWrap}></div>
-      <h2 className={styles.header}>O čom je tento súbor?</h2>
+      <h2 className={styles.header}>
+        O <CSvg />
+        om je tento súbor?
+      </h2>
       <p className={styles.text}>Fascinujúca interaktívna hra - rozprávka</p>
       <ul className={styles.list}>
         {aboutItems.map((item, index) => (
@@ -19,7 +24,10 @@ export default function About() {
           </li>
         ))}
       </ul>
-      <Button>Objednať sadu</Button>
+      <Button>
+        Objedna
+        <TSvgMedium color="#ffffff" /> sadu
+      </Button>
     </section>
   );
 }

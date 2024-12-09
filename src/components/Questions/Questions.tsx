@@ -5,6 +5,7 @@ import { questionsItems } from '@/data/data';
 import Icon from '@/helpers/Icon';
 import { useState } from 'react';
 import Button from '../Button/Button';
+import TSvgMedium from '@/helpers/TSvgMedium';
 
 export default function Questions() {
   const [openIndices, setOpenIndices] = useState<number[]>([]);
@@ -47,7 +48,10 @@ export default function Questions() {
           </li>
         ))}
       </ul>
-      <Button>Objednať sadu</Button>
+      <Button>
+        Objedna
+        <TSvgMedium color="#ffffff" /> sadu
+      </Button>
     </section>
   );
 }

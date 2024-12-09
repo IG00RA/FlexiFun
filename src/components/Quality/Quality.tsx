@@ -2,6 +2,7 @@ import styles from './Quality.module.css';
 import Image from 'next/image';
 import Button from '../Button/Button';
 import { qualityItems } from '@/data/data';
+import TSvgMedium from '@/helpers/TSvgMedium';
 
 export default function Quality() {
   return (
@@ -26,7 +27,10 @@ export default function Quality() {
         ))}
       </ul>
 
-      <Button>Objednať sadu</Button>
+      <Button>
+        Objedna
+        <TSvgMedium color="#ffffff" /> sadu
+      </Button>
     </section>
   );
 }

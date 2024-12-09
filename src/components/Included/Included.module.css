@@ -23,8 +23,8 @@
   padding: 24px;
 
   & button {
-    background-color: var(--background);
-    color: var(--main_color);
+    background: var(--background);
+    color: #ffb088;
   }
 }
 
@@ -52,6 +52,10 @@
   & li {
     list-style: disc;
     color: var(--second_text_color);
+
+    &::marker {
+      font-size: 0.5em;
+    }
   }
 }
 
@@ -118,18 +122,15 @@
   height: 40px;
   border-radius: 50%;
   background-color: var(--background);
-  color: var(--main_color);
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: box-shadow 0.3s ease;
-  padding-right: 4px;
-
-  & svg {
-    flex-shrink: 0;
-    fill: var(--main_color);
-  }
+  background-image: url('../../img/arrow.webp');
+  background-position: center left 10px;
+  background-repeat: no-repeat;
+  background-size: 14px 23px;
 
   &:hover {
     box-shadow: 0px 0px 5px 5px #ffffff4d;

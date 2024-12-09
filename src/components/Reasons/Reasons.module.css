@@ -1,11 +1,7 @@
 .reasons {
   width: 100%;
   padding: 40px 0;
-  background: linear-gradient(
-    295.65deg,
-    rgba(226, 118, 23, 0) -5.53%,
-    #fff4e4 -5.52%
-  );
+  background: linear-gradient(107.3deg, #ffffff -16.22%, #fff4e4 97.41%);
 
   @media (min-width: 768px) {
     position: relative;
@@ -77,8 +73,8 @@
   margin-bottom: 16px;
 
   & img {
-    width: 119px;
-    height: 119px;
+    width: 123px;
+    height: 123px;
   }
 }
 
@@ -86,6 +82,10 @@
   padding-left: 25px;
   & li {
     list-style: disc;
+
+    &::marker {
+      font-size: 0.5em;
+    }
   }
   & p {
     font-size: var(--fs_xsmall);

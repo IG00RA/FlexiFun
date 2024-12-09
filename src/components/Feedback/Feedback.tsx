@@ -10,6 +10,7 @@ import { feedbackItems as originalGalleryImages } from '@/data/data';
 import styles from './Feedback.module.css';
 import Button from '../Button/Button';
 import Icon from '@/helpers/Icon';
+import TSvgMedium from '@/helpers/TSvgMedium';
 
 export default function Feedback() {
   const groupedItems = [];
@@ -65,7 +66,10 @@ export default function Feedback() {
           ))}
         </Swiper>
 
-        <Button>Objednať sadu</Button>
+        <Button>
+          Objedna
+          <TSvgMedium color="#ffffff" /> sadu
+        </Button>
       </div>
     </section>
   );
