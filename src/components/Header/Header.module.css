@@ -7,19 +7,34 @@
   padding: 16px;
   background-color: #fefefe;
 
+  & button {
+    display: none;
+  }
+
   @media (min-width: 768px) {
-    width: 100%;
-    padding: 20px 40px;
-    border-radius: 0 0 40px 40px;
+    padding: 18px;
   }
 
   @media (min-width: 1024px) {
-    padding: 28px;
-    border-radius: 0 0 60px 60px;
+    padding: 24px;
+
+    & button {
+      display: block;
+      margin: 0;
+    }
   }
 
   @media (min-width: 1408px) {
-    border-radius: 0 0 80px 80px;
+    padding: 36px;
+    max-width: var(--desktop);
+    margin: 0 auto;
+    & button {
+      padding: 17px 80px;
+    }
+  }
+
+  @media (min-width: 1450px) {
+    padding: 36px 0;
   }
 }
 
@@ -31,23 +46,22 @@
 
     & ul {
       display: flex;
-      gap: 4px;
+      gap: 16px;
 
       & li {
         & a {
-          border-radius: 16px;
-          padding: 8px 12px;
-          transition: background-color 0.3s ease;
-          line-height: 19.5px;
+          font-family: var(--font_inter);
+          font-size: var(--fs_medium);
+          font-weight: 500;
+          line-height: 1.21;
+          transition: text-shadow 0.3s ease;
         }
       }
 
       & li {
         & a:hover,
         & a:focus {
-          background-color: var(--background);
-          font-weight: 600;
-          color: var(--second_color);
+          text-shadow: 0px 0 currentColor, 0px 0 currentColor;
         }
       }
     }
@@ -55,39 +69,13 @@
 
   @media (min-width: 1408px) {
     & ul {
-      gap: 8px;
-
-      & li a {
-        border-radius: 16px;
-        padding: 18px 24px;
-      }
+      gap: 32px;
     }
   }
 }
 
-.button_wrap {
-  display: none;
-
-  @media (min-width: 920px) {
-    display: flex;
-    gap: 12px;
-
-    & a {
-      display: none;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    gap: 34px;
-
-    & a {
-      display: flex;
-      min-width: auto;
-    }
-  }
-}
-
-.logo_wrap {
+.logoWrap,
+.logDesk {
   display: flex;
   align-items: center;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -99,11 +87,22 @@
       drop-shadow(0px 37px 15px #1c166303) drop-shadow(0px 57px 16px #1c166300);
     transform: scale(1.05);
   }
+}
 
+.logoWrap {
   @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.logDesk {
+  @media (max-width: 1023px) {
+    display: none;
+  }
+  @media (max-width: 1400px) {
     & svg {
-      width: 68px;
-      height: 56px;
+      width: 160px;
+      height: 40px;
     }
   }
 }

@@ -6,6 +6,8 @@ import Icon from '@/helpers/Icon';
 import MobMenu from '../MobMenu/MobMenu';
 import { useState } from 'react';
 import { menuItems } from '@/data/data';
+import Button from '../Button/Button';
+import TSvgMedium from '@/helpers/TSvgMedium';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,20 +26,26 @@ export default function Header() {
     <header
       className={`${styles.header} ${isMenuOpen && styles.mobile_menu_open}`}
     >
-      <Link className={styles.logo_wrap} href={`/`}>
+      <Link className={styles.logoWrap} href={`/`}>
         <Icon name="icon-logoMob" width={116} height={35} />
       </Link>
-      {/* 
+      <Link className={styles.logDesk} href={`/`}>
+        <Icon name="icon-logoDesk" width={220} height={64} />
+      </Link>
+
       <nav className={styles.nav}>
         <ul>
           {menuItems.map((item, index) => (
             <li key={index}>
-              <Link href={item.href}>{t(item.label)}</Link>
+              <Link href={item.href}>{item.label}</Link>
             </li>
           ))}
         </ul>
-      </nav> */}
-
+      </nav>
+      <Button>
+        Kúpi
+        <TSvgMedium color="#ffffff" />
+      </Button>
       <div
         className={`${styles.burger_wrap} ${
           isMenuOpen ? styles.burger_open : ''

@@ -78,8 +78,11 @@ export default function Form({ toggleForm }: FormProps) {
   }, []);
 
   return (
-    <div className={styles.backDrop}>
-      <div className={styles.form_wrap}>
+    <div className={styles.backDrop} onClick={toggleForm}>
+      <div
+        className={styles.form_wrap}
+        onClick={event => event.stopPropagation()}
+      >
         <button className={styles.closeBtn} onClick={toggleForm} type="button">
           x
         </button>

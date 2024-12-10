@@ -17,4 +17,10 @@
   &:focus {
     box-shadow: 0px 15px 25px 0px #eb8a3633;
   }
+
+  @media (min-width: 1024px) {
+    font-size: var(--fs_large);
+    letter-spacing: 0.03em;
+    padding: 23px 62px;
+  }
 }
