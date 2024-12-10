@@ -60,7 +60,7 @@ export const importantItems = [
   {
     head: 'Vedomá starostlivosť o planétu:',
     img: ipm2,
-    text: 'Staňte sa súčasťouenvironmentálnej výchovy svojho dieťaťa.',
+    text: 'Staňte sa súčasťou environmentálnej výchovy svojho dieťaťa.',
   },
   {
     head: 'Kritické zručnosti:',

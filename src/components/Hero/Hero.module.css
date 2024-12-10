@@ -4,14 +4,15 @@
   background: linear-gradient(107.3deg, #ffffff -16.22%, #fff4e4 97.41%);
 
   @media (min-width: 768px) {
-    position: relative;
-    padding-top: 140px;
+    padding: 60px 0 60px;
   }
 
   @media (min-width: 1024px) {
-    padding-top: 190px;
-    max-width: var(--desktop);
-    padding-bottom: 120px;
+    padding: 5% 0 5%;
+  }
+
+  @media (min-width: 1410px) {
+    padding: 122px 0 122px;
   }
 }
 
@@ -21,6 +22,24 @@
 
   & button {
     margin: 0;
+  }
+
+  @media (min-width: 1024px) {
+    position: relative;
+    max-width: var(--desktop);
+  }
+}
+
+.wrapper {
+  @media (min-width: 1024px) {
+    width: 50%;
+    padding: 10px 0;
+  }
+  @media (min-width: 1260px) {
+    padding: 7% 0;
+  }
+  @media (min-width: 1408px) {
+    padding: 135px 0;
   }
 }
 
@@ -34,6 +53,12 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 8px;
+
+  @media (min-width: 768px) {
+    font-size: var(--fs_large);
+    line-height: 1.26;
+    margin-bottom: 25px;
+  }
 }
 
 .header {
@@ -41,13 +66,33 @@
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 16px;
+
+  @media (min-width: 768px) {
+    font-size: var(--fs_mxlarge);
+    margin-bottom: 49px;
+  }
 }
 
 .heroImg {
-  width: 328px;
-  height: 328px;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1/1;
   margin: 0 auto;
   margin-bottom: 16px;
+  background-image: url('../../img/hero/heroMob.webp');
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media (min-width: 1024px) {
+    max-width: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 49%;
+    margin-bottom: 0;
+    background-image: url('../../img/hero/hero.webp');
+  }
 }
 
 .par {
@@ -56,6 +101,47 @@
   text-decoration-line: underline;
   text-decoration-style: solid;
   margin-bottom: 24px;
+
+  @media (min-width: 768px) {
+    font-size: var(--fs_large);
+    line-height: 1.21;
+    margin-bottom: 49px;
+  }
+}
+
+.symbol {
+  white-space: nowrap;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.symbolDesk {
+  white-space: nowrap;
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.buttonWrap {
+  @media (min-width: 768px) {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    & button {
+      padding: 30px 57px;
+    }
+  }
+
+  @media (min-width: 1260px) {
+    gap: 24px;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
 }
 
 .priceWrap {
@@ -72,6 +158,16 @@
     line-height: 1.25;
     letter-spacing: 0.03em;
     color: var(--second_text_color);
+  }
+
+  @media (min-width: 1024px) {
+    width: 211px;
+    height: 61px;
+    margin-bottom: 0;
+
+    & span {
+      font-size: var(--fs_xlarge);
+    }
   }
 }
 
@@ -99,6 +195,16 @@
     background: var(--main_color);
     border-radius: 2px;
   }
+
+  @media (min-width: 1024px) {
+    width: 117px;
+    height: 61px;
+
+    &::after {
+      height: 4px;
+      width: 74px;
+    }
+  }
 }
 
 .styledPriceSecond {
@@ -106,4 +212,7 @@
   top: 50%;
   right: 22px;
   transform: translateY(-50%);
+
+  @media (min-width: 1024px) {
+  }
 }

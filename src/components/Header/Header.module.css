@@ -17,10 +17,12 @@
 
   @media (min-width: 1024px) {
     padding: 24px;
+    gap: 16px;
 
     & button {
       display: block;
       margin: 0;
+      padding: 12px 40px;
     }
   }
 
@@ -46,12 +48,12 @@
 
     & ul {
       display: flex;
-      gap: 16px;
+      gap: 15px;
 
       & li {
         & a {
           font-family: var(--font_inter);
-          font-size: var(--fs_medium);
+          font-size: var(--fs_xsmall);
           font-weight: 500;
           line-height: 1.21;
           transition: text-shadow 0.3s ease;
@@ -67,9 +69,14 @@
     }
   }
 
-  @media (min-width: 1408px) {
+  @media (min-width: 1250px) {
     & ul {
       gap: 32px;
+      & li {
+        & a {
+          font-size: var(--fs_medium);
+        }
+      }
     }
   }
 }
@@ -99,9 +106,9 @@
   @media (max-width: 1023px) {
     display: none;
   }
-  @media (max-width: 1400px) {
+  @media (max-width: 1300px) {
     & svg {
-      width: 160px;
+      width: 125px;
       height: 40px;
     }
   }
@@ -120,7 +127,7 @@
   z-index: 1001;
   transition: margin 0.3s ease;
 
-  @media (min-width: 920px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 }

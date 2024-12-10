@@ -1,4 +1,8 @@
-export default function TSvgSmall({ color = 'black', line = false }) {
+export default function TSvgSmall({
+  color = 'black',
+  line = false,
+  desk = false,
+}) {
   return (
     <span style={{ position: 'relative', display: 'inline-block' }}>
       <svg
@@ -16,12 +20,12 @@ export default function TSvgSmall({ color = 'black', line = false }) {
       <span
         style={{
           display: line ? 'block' : 'none',
-          height: '1px',
+          height: desk ? '2px' : '1px',
           backgroundColor: color,
-          width: '110%',
+          width: '150%',
           position: 'absolute',
           left: '-1px',
-          bottom: '4px',
+          bottom: desk ? '2px' : '4px',
         }}
       />
     </span>
