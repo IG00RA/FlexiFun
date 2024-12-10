@@ -3,20 +3,18 @@
   padding: 40px 0;
   background: linear-gradient(107.3deg, #ffffff -16.22%, #fff4e4 97.41%);
 
-  @media (min-width: 768px) {
-    position: relative;
-    padding-top: 140px;
+  @media (min-width: 1024px) {
+    padding: 50px 20px;
   }
 
-  @media (min-width: 1024px) {
-    padding-top: 190px;
-    max-width: var(--desktop);
-    padding-bottom: 120px;
+  @media (min-width: 1250px) {
+    padding: 50px 0 125px;
   }
 }
 
 .container {
   width: var(--container);
+  max-width: 1170px;
   margin: 0 auto;
 }
 
@@ -27,16 +25,52 @@
   letter-spacing: 0.03em;
   text-align: center;
   margin-bottom: 40px;
+
+  @media (min-width: 768px) {
+    font-size: var(--fs_mxlarge);
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: var(--fs_xxlarge);
+    margin-bottom: 100px;
+  }
 }
 
 .list {
   margin-bottom: 40px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    gap: 20px 20px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: 1024px) {
+    gap: 50px 104px;
+    margin-bottom: 100px;
+  }
   & > li {
+    max-width: 400px;
+    margin: 0 auto;
     position: relative;
     border-radius: 24px;
     background-color: var(--background);
     margin-bottom: 16px;
     padding: 71px 28px 40px;
+
+    @media (min-width: 768px) {
+      max-width: none;
+      margin: 0;
+      width: calc(100% / 2 - 20px);
+    }
+
+    @media (min-width: 1024px) {
+      padding: 94px 65px 32px;
+      width: calc(100% / 2 - 52px);
+      border-radius: 32px;
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -59,6 +93,17 @@
   background: var(--main_color);
   border-radius: 0 0 32px 32px;
   white-space: nowrap;
+
+  @media (min-width: 1024px) {
+    text-align: center;
+    padding: 18.5px 20px;
+    font-size: var(--fs_large);
+  }
+
+  @media (min-width: 1280px) {
+    width: 80%;
+    font-size: var(--fs_xlarge);
+  }
 }
 
 .reasonsImg {
@@ -76,6 +121,16 @@
     width: 123px;
     height: 123px;
   }
+
+  @media (min-width: 1024px) {
+    width: 203px;
+    height: 203px;
+    margin-bottom: 17px;
+    & img {
+      width: 185px;
+      height: 185px;
+    }
+  }
 }
 
 .parList {
@@ -90,5 +145,23 @@
   & p {
     font-size: var(--fs_xsmall);
     letter-spacing: 0.03em;
+  }
+
+  @media (min-width: 1024px) {
+    & li {
+      &::marker {
+        font-size: 0.8em;
+      }
+    }
+    & p {
+      font-size: var(--fs_medium);
+      line-height: 1.66;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    & p {
+      font-size: var(--fs_large);
+    }
   }
 }
