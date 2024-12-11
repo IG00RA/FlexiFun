@@ -30,16 +30,16 @@ export default function Included() {
         }}
         spaceBetween={32}
         slidesPerView={1}
-        className={styles.gallery_slider}
+        className={styles.gallerySlider}
         modules={[Navigation, Pagination]}
         loop={true}
       >
         {originalGalleryImages.map((image, index) => (
-          <SwiperSlide key={index} className={styles.gallery_item}>
+          <SwiperSlide key={index}>
             <Image
               src={image}
               alt={`Slide o programe №${index + 1}`}
-              className={styles.slider_image}
+              className={styles.sliderImage}
               width={0}
               height={0}
               sizes="100vw"

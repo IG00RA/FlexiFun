@@ -12,9 +12,12 @@ export default function Await() {
     <section className={styles.await}>
       <h2 className={styles.header}>
         <CBigSvg />o <CSvg />
-        aká vaše die
-        <TSvg />
-        a?
+        aká vaše{' '}
+        <span className={styles.symbol}>
+          die
+          <TSvg />
+          a?
+        </span>
       </h2>
       <ul className={styles.list}>
         {awaitItems.map((item, index) => (

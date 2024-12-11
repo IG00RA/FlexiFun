@@ -12,7 +12,7 @@
   }
 
   @media (min-width: 1024px) {
-    padding: 200px 0;
+    padding: 200px 0 150px;
 
     & button {
       margin: 0;
@@ -31,17 +31,18 @@
     url('../../img/about/back.webp'), url('../../img/about/heart.svg');
   background-repeat: no-repeat;
   background-position: bottom 17px right 42px, center center, center top;
-  background-size: 57px 40px, 80% 100%, 100% 100%;
+  background-size: 57px 40px, 80% auto, 100% 100%;
   margin-bottom: 40px;
 
   @media (min-width: 768px) {
     display: flex;
     max-width: 58.5%;
     aspect-ratio: 328/250;
-    background-position: bottom 17px right 42px, top 17% left 46%,
-      left 33% top 153%;
-    background-size: 57px 40px, 71% 93%, 90% 103%;
+    background-image: url('../../img/about/backDesk.webp');
+    background-position: center left -19px;
+    background-size: 106% auto;
     margin-bottom: 0;
+    margin-top: -19px;
   }
 }
 
@@ -67,6 +68,18 @@
   @media (min-width: 1024px) {
     font-size: var(--fs_xxxlarge);
     margin-bottom: 10px;
+  }
+}
+
+.wrapper {
+  @media (min-width: 1024px) {
+    padding-top: 42px;
+  }
+  @media (min-width: 1408px) {
+    padding-bottom: 65px;
+  }
+  @media (min-width: 1460px) {
+    padding-right: 95px;
   }
 }
 
