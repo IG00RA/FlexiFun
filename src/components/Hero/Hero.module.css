@@ -20,10 +20,6 @@
   width: var(--container);
   margin: 0 auto;
 
-  & button {
-    margin: 0;
-  }
-
   @media (min-width: 1024px) {
     position: relative;
     max-width: var(--desktop);
@@ -124,6 +120,9 @@
 }
 
 .buttonWrap {
+  & > button {
+    margin: 0;
+  }
   @media (min-width: 768px) {
     display: flex;
     gap: 24px;
@@ -131,7 +130,7 @@
     flex-direction: column;
     justify-content: center;
 
-    & button {
+    & > button {
       padding: 30px 57px;
     }
   }

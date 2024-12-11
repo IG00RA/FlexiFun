@@ -8,7 +8,6 @@ import Button from '../Button/Button';
 import TSvgMedium from '@/helpers/TSvgMedium';
 import CBigSvg from '@/helpers/CBigSvg';
 import { replaceSymbol } from '@/helpers/replaceSymbol';
-import CSvg from '@/helpers/CSvg';
 import TSvgSmall from '@/helpers/TSvgSmall';
 import CSvgMedium from '@/helpers/CSvgMedium';
 
@@ -30,18 +29,24 @@ export default function Questions() {
 
       <ul className={styles.list}>
         {questionsItems.map((item, index) => (
-          <li key={index}>
+          <li
+            key={index}
+            className={`${styles.item} ${
+              openIndices.includes(index) ? `${styles.open}` : ''
+            }`}
+          >
             <div className={styles.mainWrap}>
-              <span className={styles.numbWrap}>{item.numb}</span>
+              <div className={styles.parWrap}>
+                <span className={styles.numbWrap}>{item.numb}</span>
 
-              <h3 className={styles.parHead}>
-                {replaceSymbol(
-                  item.head,
-                  { t: TSvgMedium, c: CSvgMedium },
-                  { tProps: { top: '2px' }, cProps: { top: '4px' } }
-                )}
-              </h3>
-
+                <h3 className={styles.parHead}>
+                  {replaceSymbol(
+                    item.head,
+                    { t: TSvgMedium, c: CSvgMedium },
+                    { tProps: { top: '2px' }, cProps: { top: '4px' } }
+                  )}
+                </h3>
+              </div>
               <button
                 type="button"
                 className={`${styles.button} ${
@@ -53,7 +58,7 @@ export default function Questions() {
               </button>
             </div>
             <p
-              className={`${styles.drop_box} ${
+              className={`${styles.dropBox} ${
                 openIndices.includes(index) ? `${styles.open}` : ''
               }`}
             >

@@ -7,7 +7,7 @@
   padding: 16px;
   background-color: #fefefe;
 
-  & button {
+  & > button {
     display: none;
   }
 
@@ -19,7 +19,7 @@
     padding: 24px;
     gap: 16px;
 
-    & button {
+    & > button {
       display: block;
       margin: 0;
       padding: 12px 40px;
@@ -30,7 +30,7 @@
     padding: 36px;
     max-width: var(--desktop);
     margin: 0 auto;
-    & button {
+    & > button {
       padding: 17px 80px;
     }
   }

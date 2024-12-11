@@ -26,7 +26,7 @@
   background: var(--main_color);
   padding: 24px;
 
-  & button {
+  & > button {
     background: var(--background);
     color: #ffb088;
   }
@@ -40,7 +40,7 @@
     padding: 61px 39px 61px 89px;
     width: 81%;
 
-    & button {
+    & > button {
       margin-left: 18%;
     }
   }

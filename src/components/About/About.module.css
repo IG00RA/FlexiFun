@@ -3,20 +3,12 @@
   margin: 0 auto;
   padding: 96px 0;
 
-  & button {
-    margin: 0 auto;
-  }
-
   @media (min-width: 768px) {
     display: flex;
   }
 
   @media (min-width: 1024px) {
     padding: 200px 0 150px;
-
-    & button {
-      margin: 0;
-    }
   }
 
   @media (min-width: 1440px) {
@@ -74,6 +66,10 @@
 .wrapper {
   @media (min-width: 1024px) {
     padding-top: 42px;
+
+    & > button {
+      margin: 0;
+    }
   }
   @media (min-width: 1408px) {
     padding-bottom: 65px;

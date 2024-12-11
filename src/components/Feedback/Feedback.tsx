@@ -9,23 +9,56 @@ import Image from 'next/image';
 import { feedbackItems as originalGalleryImages } from '@/data/data';
 import styles from './Feedback.module.css';
 import Button from '../Button/Button';
-import Icon from '@/helpers/Icon';
 import TSvgMedium from '@/helpers/TSvgMedium';
 import CSvg from '@/helpers/CSvg';
+import { useEffect, useState } from 'react';
+
+interface FeedbackItem {
+  img: string;
+  span: string;
+  head: string;
+  text: string;
+}
 
 export default function Feedback() {
-  const groupedItems = [];
-  for (let i = 0; i < originalGalleryImages.length; i += 3) {
-    groupedItems.push(originalGalleryImages.slice(i, i + 3));
-  }
+  const [groupedItems, setGroupedItems] = useState<FeedbackItem[][]>([]);
 
+  const groupItems = (
+    items: FeedbackItem[],
+    groupSize: number
+  ): FeedbackItem[][] => {
+    const grouped: FeedbackItem[][] = [];
+    for (let i = 0; i < items.length; i += groupSize) {
+      grouped.push(items.slice(i, i + groupSize));
+    }
+    return grouped;
+  };
+
+  useEffect(() => {
+    const updateGroups = () => {
+      const screenWidth = window.innerWidth;
+      const groupSize = screenWidth >= 768 && screenWidth < 1250 ? 4 : 3;
+      setGroupedItems(groupItems(originalGalleryImages, groupSize));
+    };
+    updateGroups();
+
+    window.addEventListener('resize', updateGroups);
+
+    return () => {
+      window.removeEventListener('resize', updateGroups);
+    };
+  }, []);
   return (
     <section id="feedback" className={styles.feedback}>
       <div className={styles.container}>
         <h2 className={styles.header}>
-          Spätná väzba od <br /> rodi
-          <CSvg />
-          ov a odborníkov
+          Spätná väzba od{' '}
+          <span>
+            rodi
+            <CSvg />
+            ov
+          </span>{' '}
+          a odborníkov
         </h2>
         <div className={styles.paginationWrap}>
           <div className={styles.prev}></div>
@@ -42,28 +75,28 @@ export default function Feedback() {
             el: `.${styles.pagination}`,
           }}
           spaceBetween={32}
-          className={styles.gallery_slider}
+          className={styles.gallerySlider}
           modules={[Navigation, Pagination]}
           loop={true}
         >
           {groupedItems.map((group, index) => (
-            <SwiperSlide key={index} className={styles.gallery_item}>
+            <SwiperSlide key={index} className={styles.galleryItem}>
               {group.map((item, subIndex) => (
                 <div key={subIndex} className={styles.card}>
                   <div className={styles.imgWrap}>
                     <Image
                       src={item.img}
                       alt={item.head}
-                      className={styles.slider_image}
+                      className={styles.sliderImage}
                       width={0}
                       height={0}
                       sizes="100vw"
                     />
                   </div>
-                  <p className={styles.card_text}>{item.text}</p>
-                  <div className={styles.card_footer}>
-                    <span className={styles.card_span}>{item.span}</span>
-                    <h4 className={styles.card_head}>{item.head}</h4>
+                  <p className={styles.cardText}>{item.text}</p>
+                  <div className={styles.cardFooter}>
+                    <span className={styles.cardSpan}>{item.span}</span>
+                    <h4 className={styles.cardHead}>{item.head}</h4>
                   </div>
                 </div>
               ))}

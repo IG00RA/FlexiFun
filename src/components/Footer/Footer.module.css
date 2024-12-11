@@ -3,11 +3,8 @@
   background: var(--main_color);
   padding: 60px 0 96px;
 
-  @media (min-width: 1408px) {
-    width: 95%;
-    padding: 60px 32px;
-    background-color: var(--main_text_color);
-    border-radius: 80px;
+  @media (min-width: 1024px) {
+    padding: 80px 0;
   }
 }
 
@@ -15,14 +12,53 @@
   width: var(--container);
   margin: 0 auto;
 
-  & button {
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: var(--desktop);
+  }
+}
+
+.secondWrap {
+  & > button {
     color: #ffb088;
     background: var(--background);
     margin: 0;
   }
 }
 
-.logo_wrap {
+@media (min-width: 1024px) {
+  .fistWrap {
+    display: flex;
+    gap: 36px;
+  }
+  .secondWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    & > button {
+      width: 220px;
+      height: 64px;
+      padding: 11px 60px;
+    }
+  }
+}
+
+@media (min-width: 1300px) {
+  .fistWrap {
+    gap: 80px;
+  }
+  .secondWrap {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+.logoWrap {
   margin-bottom: 35px;
   display: inline-block;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -33,10 +69,21 @@
       drop-shadow(0px 37px 15px #1c166303) drop-shadow(0px 57px 16px #1c166300);
     transform: scale(1.05);
   }
+
+  @media (min-width: 1024px) {
+    & svg {
+      width: 220px;
+      height: 66px;
+    }
+  }
 }
 
 .menuWrap {
   margin-bottom: 40px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
 }
 
 .menu {
@@ -46,6 +93,11 @@
   font-size: var(--fs_medium);
   font-weight: 700;
   line-height: 1.2;
+
+  @media (min-width: 1024px) {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
 }
 
 .nav {
@@ -58,8 +110,15 @@
       line-height: 1.2;
       font-family: var(--font_inter);
       color: var(--second_text_color);
+
+      @media (min-width: 1024px) {
+        font-size: 20px;
+      }
     }
 
+    @media (min-width: 1024px) {
+      margin-bottom: 15px;
+    }
     &:last-child {
       margin-bottom: 0;
     }
@@ -84,4 +143,10 @@
   line-height: 1.2;
   color: var(--second_text_color);
   margin-bottom: 40px;
+
+  @media (min-width: 1024px) {
+    margin-bottom: 0;
+    font-size: 20px;
+    margin-top: 20px;
+  }
 }

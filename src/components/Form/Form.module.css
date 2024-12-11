@@ -18,6 +18,10 @@
   border-radius: 24px;
   padding: 40px 29px;
   background: var(--background);
+
+  @media (min-width: 768px) {
+    padding: 40px;
+  }
 }
 
 .closeBtn {
@@ -31,6 +35,15 @@
     margin: 0 auto !important;
     margin-top: 24px !important;
     padding: 22px 32px;
+
+    @media (min-width: 768px) {
+      margin-top: 16px !important;
+      font-size: var(--fs_xsmall);
+      font-weight: 500;
+      line-height: 1.26;
+      letter-spacing: 0.03em;
+      text-align: center;
+    }
   }
 }
 
@@ -57,6 +70,10 @@
     line-height: 1.21;
     font-family: var(--font_inter);
     margin-bottom: 16px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 24px;
+    }
   }
 
   & .input::placeholder {
@@ -101,6 +118,10 @@
   gap: 8px;
   align-items: center;
   margin-bottom: 16px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 24px;
+  }
 }
 
 .quantity {
@@ -164,6 +185,10 @@
   flex-direction: column;
   gap: 8px;
   margin-bottom: 16px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 24px;
+  }
 }
 
 .socWrap input[type='radio'] {

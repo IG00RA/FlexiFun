@@ -3,10 +3,6 @@
   margin: 0 auto;
   padding: 96px 0;
 
-  & button {
-    margin: 0 auto;
-  }
-
   @media (min-width: 1024px) {
     padding: 150px 0;
     max-width: var(--desktop);

@@ -14,15 +14,13 @@ export default function MobMenu({ isMenuOpen, closeMenu }: MobMenuProps) {
   return (
     <div
       onClick={closeMenu}
-      className={`${styles.mobile_wrap} ${
-        isMenuOpen && styles.mobile_menu_open
-      }`}
+      className={`${styles.mobileWrap} ${isMenuOpen && styles.mobileMenuOpen}`}
     >
       <div
-        className={styles.burger_menu}
+        className={styles.burgerMenu}
         onClick={event => event.stopPropagation()}
       >
-        <Link className={styles.logo_wrap} href={`/`}>
+        <Link className={styles.logoWrap} href={`/`}>
           <Icon name="icon-logoMob" width={116} height={35} color={'#fff'} />
         </Link>
 
