@@ -115,7 +115,7 @@
   }
 }
 
-.burger_wrap {
+.burgerWrap {
   width: 48px;
   height: 40px;
   display: flex;
@@ -154,23 +154,23 @@
   top: 24px;
 }
 
-.burger_open .line:nth-child(1) {
+.burgerOpen .line:nth-child(1) {
   transform: rotate(45deg);
   width: 20px;
   top: 18px;
 }
 
-.burger_open .line:nth-child(2) {
+.burgerOpen .line:nth-child(2) {
   opacity: 0;
 }
 
-.burger_open .line:nth-child(3) {
+.burgerOpen .line:nth-child(3) {
   width: 20px;
   transform: rotate(-45deg);
   top: 18px;
 }
 
-.burger_wrap.burger_open {
+.burgerWrap.burgerOpen {
   border: 1px solid #ffffff;
   margin-top: 24px;
   z-index: 3;

@@ -23,9 +23,7 @@ export default function Header() {
     document.body.style.touchAction = 'none';
   };
   return (
-    <header
-      className={`${styles.header} ${isMenuOpen && styles.mobile_menu_open}`}
-    >
+    <header className={`${styles.header}`}>
       <Link className={styles.logoWrap} href={`/`}>
         <Icon name="icon-logoMob" width={116} height={35} />
       </Link>
@@ -47,8 +45,8 @@ export default function Header() {
         <TSvgMedium color="#ffffff" />
       </Button>
       <div
-        className={`${styles.burger_wrap} ${
-          isMenuOpen ? styles.burger_open : ''
+        className={`${styles.burgerWrap} ${
+          isMenuOpen ? styles.burgerOpen : ''
         }`}
         onClick={isMenuOpen ? closeMenu : openMenu}
       >
