@@ -20,6 +20,14 @@
   margin: 0 auto;
   margin-bottom: 18px;
   max-width: var(--mobile_xl);
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  &:hover {
+    filter: drop-shadow(0px 2px 5px #ff94661a)
+      drop-shadow(0px 9px 20px #ffb0881f) drop-shadow(0px 16px 20px #ff94661a)
+      drop-shadow(0px 37px 15px #ff94661a) drop-shadow(0px 57px 16px #ffb0881f);
+    transform: scale(1.02);
+  }
 
   @media (min-width: 1024px) {
     background-image: url('../../img/howWorks/backDesk.webp');
@@ -145,6 +153,15 @@
     border: 1px solid #dfdfdf;
     border-radius: 18px;
     box-shadow: 0px 1px 1px 0px #00000040;
+    transition: transform 0.3s ease, filter 0.3s ease;
+
+    &:hover {
+      filter: drop-shadow(0px 2px 5px #ff94661a)
+        drop-shadow(0px 9px 20px #ffb0881f) drop-shadow(0px 16px 20px #ff94661a)
+        drop-shadow(0px 37px 15px #ff94661a)
+        drop-shadow(0px 57px 16px #ffb0881f);
+      transform: scale(1.02);
+    }
 
     @media (min-width: 768px) {
       padding: 35px 21px 26px;

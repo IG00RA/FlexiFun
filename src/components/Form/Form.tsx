@@ -1,5 +1,6 @@
 'use client';
 
+import ReactDOM from 'react-dom';
 import styles from './Form.module.css';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import Button from '../Button/Button';
@@ -7,8 +8,11 @@ import TSvgMedium from '@/helpers/TSvgMedium';
 
 interface FormProps {
   toggleForm: () => void;
+  isFormOpen: boolean;
 }
-export default function Form({ toggleForm }: FormProps) {
+export default function Form({ toggleForm, isFormOpen }: FormProps) {
+  const [isClient, setIsClient] = useState(false);
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -77,10 +81,21 @@ export default function Form({ toggleForm }: FormProps) {
     };
   }, []);
 
-  return (
-    <div className={styles.backDrop} onClick={toggleForm}>
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
+
+  return ReactDOM.createPortal(
+    <div
+      onClick={toggleForm}
+      className={`${styles.backDrop} ${isFormOpen && styles.formOpen}`}
+    >
       <div
-        className={styles.form_wrap}
+        className={styles.formWrap}
         onClick={event => event.stopPropagation()}
       >
         <button className={styles.closeBtn} onClick={toggleForm} type="button">
@@ -211,6 +226,7 @@ export default function Form({ toggleForm }: FormProps) {
           </Button>
         </form>
       </div>
-    </div>
+    </div>,
+    document.getElementById('portal-root')!
   );
 }

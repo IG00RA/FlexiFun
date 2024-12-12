@@ -31,6 +31,7 @@ export default function Questions() {
         {questionsItems.map((item, index) => (
           <li
             key={index}
+            onClick={() => toggleDropdown(index)}
             className={`${styles.item} ${
               openIndices.includes(index) ? `${styles.open}` : ''
             }`}
@@ -52,7 +53,6 @@ export default function Questions() {
                 className={`${styles.button} ${
                   openIndices.includes(index) ? styles.active : ''
                 }`}
-                onClick={() => toggleDropdown(index)}
               >
                 <Icon name="icon-arrrow_quests" width={14} height={26} />
               </button>

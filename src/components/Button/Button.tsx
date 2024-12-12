@@ -23,7 +23,7 @@ const Button: React.FC<ButtonProps> = ({ type = 'button', children }) => {
       <button onClick={toggleForm} className={`${styles.button}`} type={type}>
         {children}
       </button>
-      {isFormOpen && <Form toggleForm={toggleForm} />}
+      {isFormOpen && <Form isFormOpen={isFormOpen} toggleForm={toggleForm} />}
     </>
   );
 };

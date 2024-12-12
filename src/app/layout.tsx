@@ -60,6 +60,7 @@ export default async function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <div id="portal-root"></div>
       </body>
     </html>
   );

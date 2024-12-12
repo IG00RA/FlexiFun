@@ -11,11 +11,12 @@
   line-height: 1.25;
   letter-spacing: 0.03em;
   text-align: center;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 
   &:hover,
   &:focus {
     box-shadow: 0px 15px 25px 0px #eb8a3633;
+    transform: scale(1.02);
   }
 
   @media (min-width: 768px) {

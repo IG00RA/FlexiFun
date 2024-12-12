@@ -78,6 +78,13 @@
   background-image: url('../../img/hero/heroMob.webp');
   background-repeat: no-repeat;
   background-size: contain;
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: drop-shadow(0px 2px 5px #ff94661a)
+      drop-shadow(0px 9px 20px #ffb0881f) drop-shadow(0px 16px 20px #ff94661a)
+      drop-shadow(0px 37px 15px #ff94661a) drop-shadow(0px 57px 16px #ffb0881f);
+  }
 
   @media (min-width: 1024px) {
     max-width: none;

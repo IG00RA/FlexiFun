@@ -1,13 +1,13 @@
 import React from 'react';
 
 interface ReplaceSymbolComponentProps {
-  tProps?: Record<string, any>;
-  cProps?: Record<string, any>;
+  tProps?: Record<string, unknown>;
+  cProps?: Record<string, unknown>;
 }
 
 interface ReplaceSymbolComponents {
-  t?: React.FC<any>;
-  c?: React.FC<any>;
+  t?: React.FC<Record<string, unknown>>;
+  c?: React.FC<Record<string, unknown>>;
 }
 
 export const replaceSymbol = (
