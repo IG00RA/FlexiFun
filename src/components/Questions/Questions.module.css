@@ -140,7 +140,6 @@
   overflow: hidden;
   padding-left: 52px;
   height: 0;
-  width: 0;
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.5s ease;
@@ -154,7 +153,6 @@
 
 .dropBox.open {
   height: auto;
-  width: auto;
   transform: scaleY(1);
   margin-top: 16px;
 }
