@@ -1,8 +1,12 @@
 import type { Metadata } from 'next';
 import '../styles/globals.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { Fredoka, Inter } from 'next/font/google';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
+import { Suspense } from 'react';
+import { FacebookPixel } from '@/components/FacebookPixel/FacebookPixel';
+import { ToastContainer } from 'react-toastify';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -61,6 +65,10 @@ export default async function RootLayout({
         <main>{children}</main>
         <Footer />
         <div id="portal-root"></div>
+        <ToastContainer />
+        <Suspense fallback={null}>
+          <FacebookPixel />
+        </Suspense>
       </body>
     </html>
   );

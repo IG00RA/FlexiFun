@@ -5,6 +5,9 @@ import styles from './Form.module.css';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import Button from '../Button/Button';
 import TSvgMedium from '@/helpers/TSvgMedium';
+import { sendToGoogleScript } from '@/api/sendToGoogle';
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
 
 interface FormProps {
   toggleForm: () => void;
@@ -12,6 +15,7 @@ interface FormProps {
 }
 export default function Form({ toggleForm, isFormOpen }: FormProps) {
   const [isClient, setIsClient] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -27,6 +31,8 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
     phone: '',
     nickname: '',
   });
+
+  const router = useRouter();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
@@ -67,10 +73,40 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
     return isValid;
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     if (validateForm()) {
-      console.log('Form submitted:', formData);
+      try {
+        const message = {
+          type: 'flexi',
+          formData: {
+            name: formData.name,
+            surname: formData.nickname,
+            quantity: formData.quantity,
+            messenger: formData.communication,
+            phone: formData.phone,
+            email: formData.email,
+          },
+        };
+        setIsLoading(true);
+        await sendToGoogleScript(message);
+        toast.success('Formulár bol úspešne odoslaný!');
+        const currentQueryParams = new URLSearchParams(window.location.search);
+        const queryParams = currentQueryParams.toString();
+
+        if (queryParams) {
+          router.push(`/confirm?${queryParams}`);
+        } else {
+          router.push('/confirm');
+        }
+        setIsLoading(false);
+        toggleForm();
+      } catch (error) {
+        setIsLoading(false);
+        toast.error('Formulár sa nepodarilo odoslať, skúste to znova!');
+      }
+    } else {
+      toast.error('Vyplňte prosím všetky povinné polia!');
     }
   };
 
@@ -142,6 +178,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
               onClick={() => handleQuantityChange(-1)}
             ></button>
             <input
+              required
               className={styles.quantity}
               type="number"
               placeholder="2"
@@ -202,6 +239,8 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
               value={formData.phone}
               onChange={handleChange}
               placeholder="Phone number"
+              inputMode="numeric"
+              pattern="[\d\+\(\)\-\s]*"
               className={`${styles.input} ${errors.phone ? styles.error : ''}`}
               required
             />
@@ -219,11 +258,16 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
               required
             />
           </label>
-
-          <Button type="submit">
-            Dajte die
-            <TSvgMedium color="#ffffff" />a<TSvgMedium color="#ffffff" />u výlet
-          </Button>
+          <span
+            className={`${styles.loader} ${!isLoading ? styles.hidden : ''}`}
+          ></span>
+          <div className={`${isLoading ? styles.hidden : styles.formButton}`}>
+            <Button type="submit">
+              Dajte die
+              <TSvgMedium color="#ffffff" />a<TSvgMedium color="#ffffff" />u
+              výlet
+            </Button>
+          </div>
         </form>
       </div>
     </div>,
