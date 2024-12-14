@@ -5,7 +5,7 @@ import styles from './Form.module.css';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import Button from '../Button/Button';
 import TSvgMedium from '@/helpers/TSvgMedium';
-import { sendToGoogleScript } from '@/api/sendToGoogle';
+import { sendMessage, sendToGoogleScript } from '@/api/sendData';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
 
@@ -80,6 +80,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
         const message = {
           type: 'flexi',
           formData: {
+            message: 'Користувач відправив форму',
             name: formData.name,
             surname: formData.nickname,
             quantity: formData.quantity,
@@ -90,6 +91,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
         };
         setIsLoading(true);
         await sendToGoogleScript(message);
+        await sendMessage(message);
         toast.success('Formulár bol úspešne odoslaný!');
         const currentQueryParams = new URLSearchParams(window.location.search);
         const queryParams = currentQueryParams.toString();
