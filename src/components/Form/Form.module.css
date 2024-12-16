@@ -37,6 +37,21 @@
   position: absolute;
   top: 20px;
   right: 20px;
+  & svg {
+    transition: fill 0.3s ease;
+  }
+
+  &:hover,
+  &:focus {
+    & svg {
+      fill: #ffb088;
+    }
+  }
+
+  @media (min-width: 768px) {
+    top: 24px;
+    right: 24px;
+  }
 }
 
 .header {
@@ -257,4 +272,8 @@
       text-align: center;
     }
   }
+}
+
+.imgWrap {
+  position: relative;
 }

@@ -8,6 +8,7 @@ import TSvgMedium from '@/helpers/TSvgMedium';
 import { sendMessage, sendToGoogleScript } from '@/api/sendData';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
+import Icon from '@/helpers/Icon';
 
 interface FormProps {
   toggleForm: () => void;
@@ -137,7 +138,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
         onClick={event => event.stopPropagation()}
       >
         <button className={styles.closeBtn} onClick={toggleForm} type="button">
-          x
+          <Icon name="icon-close" width={16} height={16} color="#999" />
         </button>
         <h2 className={styles.header}>Formulár žiadosti</h2>
 

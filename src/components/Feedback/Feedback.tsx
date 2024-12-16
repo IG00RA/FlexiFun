@@ -12,6 +12,7 @@ import Button from '../Button/Button';
 import TSvgMedium from '@/helpers/TSvgMedium';
 import CSvg from '@/helpers/CSvg';
 import { useEffect, useState } from 'react';
+import Icon from '@/helpers/Icon';
 
 interface FeedbackItem {
   img: string;
@@ -22,6 +23,17 @@ interface FeedbackItem {
 
 export default function Feedback() {
   const [groupedItems, setGroupedItems] = useState<FeedbackItem[][]>([]);
+  const [loadingImages, setLoadingImages] = useState<boolean[]>(
+    Array(originalGalleryImages.length).fill(true)
+  );
+
+  const handleImageLoad = (index: number) => {
+    setLoadingImages(prev => {
+      const updated = [...prev];
+      updated[index] = false;
+      return updated;
+    });
+  };
 
   const groupItems = (
     items: FeedbackItem[],
@@ -84,10 +96,21 @@ export default function Feedback() {
               {group.map((item, subIndex) => (
                 <div key={subIndex} className={styles.card}>
                   <div className={styles.imgWrap}>
+                    {loadingImages[index] && (
+                      <div className={styles.loader}>
+                        <Icon
+                          name="icon-load"
+                          width={55}
+                          height={55}
+                          color="#ffb088"
+                        />
+                      </div>
+                    )}
                     <Image
                       src={item.img}
                       alt={item.head}
                       className={styles.sliderImage}
+                      onLoad={() => handleImageLoad(index)}
                       width={0}
                       height={0}
                       sizes="100vw"

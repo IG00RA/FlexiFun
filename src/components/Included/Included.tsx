@@ -15,8 +15,21 @@ import TSvgMedium from '@/helpers/TSvgMedium';
 import CBigSvg from '@/helpers/CBigSvg';
 import CSvg from '@/helpers/CSvg';
 import TSvg from '@/helpers/TSvg';
+import { useState } from 'react';
 
 export default function Included() {
+  const [loadingImages, setLoadingImages] = useState<boolean[]>(
+    Array(originalGalleryImages.length).fill(true)
+  );
+
+  const handleImageLoad = (index: number) => {
+    setLoadingImages(prev => {
+      const updated = [...prev];
+      updated[index] = false;
+      return updated;
+    });
+  };
+
   return (
     <section id="included" className={styles.included}>
       <Swiper
@@ -36,12 +49,18 @@ export default function Included() {
       >
         {originalGalleryImages.map((image, index) => (
           <SwiperSlide key={index}>
+            {loadingImages[index] && (
+              <div className={styles.loader}>
+                <Icon name="icon-load" width={55} height={55} color="#ffb088" />
+              </div>
+            )}
             <Image
               src={image}
               alt={`Slide o programe №${index + 1}`}
               className={styles.sliderImage}
               width={0}
               height={0}
+              onLoad={() => handleImageLoad(index)}
               sizes="100vw"
             />
           </SwiperSlide>
