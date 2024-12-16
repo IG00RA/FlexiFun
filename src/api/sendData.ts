@@ -1,32 +1,50 @@
 const BACK_HOST = process.env.NEXT_PUBLIC_BACK_HOST;
 const BACK_PORT = process.env.NEXT_PUBLIC_BACK_PORT;
 
+interface FormData {
+  message: string;
+  name?: string;
+  surname?: string;
+  quantity?: number;
+  messenger?: string;
+  phone?: string;
+  email?: string;
+}
+
+interface SendMessageData {
+  type: string;
+  bot?: boolean;
+  formData: FormData;
+}
+interface QueryParams {
+  [key: string]: string | null | undefined;
+  refId?: string | null | undefined;
+  sub1?: string | null | undefined;
+  sub2?: string | null | undefined;
+  sub3?: string | null | undefined;
+  sub4?: string | null | undefined;
+  sub5?: string | null | undefined;
+  sub6?: string | null | undefined;
+  sub7?: string | null | undefined;
+  sub8?: string | null | undefined;
+  fbp?: string | null | undefined;
+}
+
 let url = 'Не вказано';
 if (typeof window !== 'undefined') {
   url = document.referrer || 'Не вказано';
 }
 
-function getParamString(queryParams: any) {
+function getParamString(queryParams: QueryParams): string {
   let message = '';
 
-  for (let key in queryParams) {
-    message += queryParams?.[key] ? `${key} <b>${queryParams[key]}</b>\n` : '';
+  for (const key in queryParams) {
+    if (queryParams[key]) {
+      message += `${key} <b>${queryParams[key]}</b>\n`;
+    }
   }
 
   return message;
-}
-
-interface QueryParams {
-  refId?: string | null;
-  sub1?: string | null;
-  sub2?: string | null;
-  sub3?: string | null;
-  sub4?: string | null;
-  sub5?: string | null;
-  sub6?: string | null;
-  sub7?: string | null;
-  sub8?: string | null;
-  fbp?: string | null;
 }
 
 function getQueryParams(): QueryParams {
@@ -47,7 +65,7 @@ function getQueryParams(): QueryParams {
   return params;
 }
 
-export const sendToGoogleScript = async (data: any) => {
+export const sendToGoogleScript = async (data: SendMessageData) => {
   const requestData = {
     ...data,
     formData: {
@@ -73,11 +91,11 @@ export const sendToGoogleScript = async (data: any) => {
       throw new Error('Failed to send data to Google Script');
     }
   } catch (error) {
-    throw new Error('Error sending data to Google Script');
+    throw new Error('Error sending data to Google Script: ' + error);
   }
 };
 
-export async function sendMessage(sendData: any) {
+export async function sendMessage(sendData: SendMessageData) {
   let botMessage;
   if (sendData.bot) {
     botMessage = '<b>Користувач перейшов в бот:</b>\n';

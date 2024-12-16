@@ -104,7 +104,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
         }
         setIsLoading(false);
         toggleForm();
-      } catch (error) {
+      } catch {
         setIsLoading(false);
         toast.error('Formulár sa nepodarilo odoslať, skúste to znova!');
       }
@@ -207,21 +207,21 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
               <input
                 type="radio"
                 name="communication"
-                id="telegram"
-                onChange={handleRadioChange}
-                checked={formData.communication === 'telegram'}
-              />
-              Telegram
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="communication"
                 id="whatsApp"
                 onChange={handleRadioChange}
                 checked={formData.communication === 'whatsApp'}
               />
               WhatsApp
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="communication"
+                id="telegram"
+                onChange={handleRadioChange}
+                checked={formData.communication === 'telegram'}
+              />
+              Telegram
             </label>
             <label>
               <input

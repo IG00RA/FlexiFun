@@ -29,7 +29,16 @@ export default function Confirm() {
       window.location.href = CHAT_URL;
     } catch (error) {
       setIsLoading(false);
-      toast.error('Formulár sa nepodarilo odoslať, skúste to znova!');
+
+      if (error instanceof Error) {
+        toast.error(
+          `Formulár sa nepodarilo odoslať, skúste to znova! ${error.message}`
+        );
+      } else {
+        toast.error(
+          'Formulár sa nepodarilo odoslať, skúste to znova! Neznáma chyba.'
+        );
+      }
     }
   };
 
