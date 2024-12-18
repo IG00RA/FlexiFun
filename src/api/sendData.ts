@@ -30,10 +30,11 @@ interface QueryParams {
   fbp?: string | null | undefined;
 }
 
-let url = 'Не вказано';
-if (typeof window !== 'undefined') {
-  url = document.referrer || 'Не вказано';
-}
+const getDefaultUrl = (): string =>
+  typeof window !== 'undefined'
+    ? document.referrer || 'Не вказано'
+    : 'Не вказано';
+const url = getDefaultUrl();
 
 function getParamString(queryParams: QueryParams): string {
   let message = '';
@@ -47,25 +48,50 @@ function getParamString(queryParams: QueryParams): string {
   return message;
 }
 
-function getQueryParams(): QueryParams {
+const getQueryParams = (): QueryParams => {
   const searchParams = new URLSearchParams(window.location.search);
-  const params: QueryParams = {};
+  return {
+    refId: searchParams.get('ref_id'),
+    sub1: searchParams.get('sub1'),
+    sub2: searchParams.get('sub2'),
+    sub3: searchParams.get('sub3'),
+    sub4: searchParams.get('sub4'),
+    sub5: searchParams.get('sub5'),
+    sub6: searchParams.get('sub6'),
+    sub7: searchParams.get('sub7'),
+    sub8: searchParams.get('sub8'),
+    fbp: searchParams.get('fbp'),
+  };
+};
 
-  params.refId = searchParams.get('ref_id');
-  params.sub1 = searchParams.get('sub1');
-  params.sub2 = searchParams.get('sub2');
-  params.sub3 = searchParams.get('sub3');
-  params.sub4 = searchParams.get('sub4');
-  params.sub5 = searchParams.get('sub5');
-  params.sub6 = searchParams.get('sub6');
-  params.sub7 = searchParams.get('sub7');
-  params.sub8 = searchParams.get('sub8');
-  params.fbp = searchParams.get('fbp');
+const sendPostRequest = async (
+  endpoint: string,
+  data: object
+): Promise<void> => {
+  try {
+    const response = await fetch(
+      `http://${BACK_HOST}:${BACK_PORT}${endpoint}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      }
+    );
 
-  return params;
-}
+    if (!response.ok) {
+      throw new Error(`Failed to send data to ${endpoint}`);
+    }
+  } catch (error) {
+    console.error(`Error sending data to ${endpoint}:`, error);
+    throw error;
+  }
+};
 
-export const sendToGoogleScript = async (data: SendMessageData) => {
+export const sendToGoogleScript = async (
+  data: SendMessageData
+): Promise<void> => {
   const requestData = {
     ...data,
     formData: {
@@ -74,28 +100,10 @@ export const sendToGoogleScript = async (data: SendMessageData) => {
       ...getQueryParams(),
     },
   };
-
-  try {
-    const response = await fetch(
-      `http://${BACK_HOST}:${BACK_PORT}/api/send-to-google-script`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(requestData),
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error('Failed to send data to Google Script');
-    }
-  } catch (error) {
-    throw new Error('Error sending data to Google Script: ' + error);
-  }
+  await sendPostRequest('/api/send-to-google-script', requestData);
 };
 
-export async function sendMessage(sendData: SendMessageData) {
+export const sendMessage = async (sendData: SendMessageData): Promise<void> => {
   let botMessage;
   if (sendData.bot) {
     botMessage = '<b>Користувач перейшов в бот:</b>\n';
@@ -118,13 +126,6 @@ export async function sendMessage(sendData: SendMessageData) {
     type: 'flexi',
     formData: botMessage,
   };
-  fetch(`http://${BACK_HOST}:${BACK_PORT}/api/send-message`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ message }),
-  }).catch(error => {
-    throw new Error('Error sending message:', error);
-  });
-}
+
+  await sendPostRequest('/api/send-message', { message });
+};

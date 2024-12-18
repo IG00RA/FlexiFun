@@ -38,7 +38,6 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-
     setErrors({ ...errors, [name]: '' });
   };
 
@@ -76,40 +75,39 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-    if (validateForm()) {
-      try {
-        const message = {
-          type: 'flexi',
-          formData: {
-            message: 'Користувач відправив форму',
-            name: formData.name,
-            surname: formData.nickname,
-            quantity: formData.quantity,
-            messenger: formData.communication,
-            phone: formData.phone,
-            email: formData.email,
-          },
-        };
-        setIsLoading(true);
-        await sendToGoogleScript(message);
-        await sendMessage(message);
-        toast.success('Formulár bol úspešne odoslaný!');
-        const currentQueryParams = new URLSearchParams(window.location.search);
-        const queryParams = currentQueryParams.toString();
-
-        if (queryParams) {
-          router.push(`/confirm?${queryParams}`);
-        } else {
-          router.push('/confirm');
-        }
-        setIsLoading(false);
-        toggleForm();
-      } catch {
-        setIsLoading(false);
-        toast.error('Formulár sa nepodarilo odoslať, skúste to znova!');
-      }
-    } else {
+    if (!validateForm()) {
       toast.error('Vyplňte prosím všetky povinné polia!');
+      return;
+    }
+    try {
+      const message = {
+        type: 'flexi',
+        formData: {
+          message: 'Користувач відправив форму',
+          name: formData.name,
+          surname: formData.nickname,
+          quantity: formData.quantity,
+          messenger: formData.communication,
+          phone: formData.phone,
+          email: formData.email,
+        },
+      };
+      setIsLoading(true);
+      await Promise.all([
+        sendToGoogleScript(message),
+        await sendMessage(message),
+      ]);
+      toast.success('Formulár bol úspešne odoslaný!');
+      const currentQueryParams = new URLSearchParams(window.location.search);
+      const queryParams = currentQueryParams.toString();
+
+      router.push(queryParams ? `/confirm?${queryParams}` : `/confirm`);
+
+      toggleForm();
+    } catch {
+      toast.error('Formulár sa nepodarilo odoslať, skúste to znova!');
+    } finally {
+      setIsLoading(false);
     }
   };
 

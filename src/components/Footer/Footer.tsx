@@ -7,7 +7,7 @@ import TSvgMedium from '@/helpers/TSvgMedium';
 
 export default function Footer() {
   return (
-    <section className={styles.footer}>
+    <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.fistWrap}>
           <Link className={styles.logoWrap} href={`/`}>
@@ -41,6 +41,6 @@ export default function Footer() {
           </Button>
         </div>
       </div>
-    </section>
+    </footer>
   );
 }

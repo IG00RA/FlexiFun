@@ -122,7 +122,7 @@ export const aboutItems = [
 ];
 
 export const awaitItems: string[] = [
-  'Spolu s postavičkami z rozprávky bude dieťa zbierať 3D postavičky zvierat a umiestňovať ich na mapu sveta.',
+  'Spolu s postavičkami z rozprávky bude dieťa zbierať 2D postavičky zvierat a umiestňovať ich na mapu sveta.',
   'Keď sa ponorí do príbehu, pochopí, že je dôležité starať sa o prírodu, a stane sa skutočným hrdinom pre našu planétu.',
   'Na konci je jedinečná príležitosť cítiť sa ako súčasť tímu, ktorý zachraňuje Zem.',
 ];
