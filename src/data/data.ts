@@ -172,7 +172,7 @@ export const howWorksItems = [
 
 export const feedbackItems = [
   {
-    span: 'Zdenka',
+    span: 'Zuzana',
     head: 'environmentálna pedagogička',
     img: feed1.src,
     text: 'Nie je to len stavebnica, ale skutočný vzdelávací nástroj pre predškolákov a školákov.',
