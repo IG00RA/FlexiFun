@@ -1,6 +1,8 @@
 import About from '@/components/About/About';
 import Await from '@/components/Await/Await';
 import Feedback from '@/components/Feedback/Feedback';
+import Footer from '@/components/Footer/Footer';
+import Header from '@/components/Header/Header';
 import Hero from '@/components/Hero/Hero';
 import HowWorks from '@/components/HowWorks/HowWorks';
 import Important from '@/components/Important/Important';
@@ -12,16 +14,20 @@ import Reasons from '@/components/Reasons/Reasons';
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Important />
-      <Reasons />
-      <About />
-      <Await />
-      <Included />
-      <HowWorks />
-      <Feedback />
-      <Quality />
-      <Questions />
+      <Header />
+      <main>
+        <Hero />
+        <Important />
+        <Reasons />
+        <About />
+        <Await />
+        <Included />
+        <HowWorks />
+        <Feedback />
+        <Quality />
+        <Questions />
+      </main>
+      <Footer />
     </>
   );
 }

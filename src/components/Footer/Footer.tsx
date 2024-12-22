@@ -29,7 +29,7 @@ export default function Footer() {
         <div className={styles.secondWrap}>
           <a
             className={styles.policy}
-            href="/"
+            href="/privacy-policy"
             target="_blank"
             rel="noopener noreferrer"
           >

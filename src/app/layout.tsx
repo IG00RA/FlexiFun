@@ -61,9 +61,7 @@ export default async function RootLayout({
   return (
     <html lang="sk">
       <body className={`${inter.variable} ${fredoka.variable}`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        {children}
         <div id="portal-root"></div>
         <ToastContainer />
         <Suspense fallback={null}>
