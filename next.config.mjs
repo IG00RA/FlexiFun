@@ -1,15 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  webpack: config => {
-    config.module.rules.push({
-      test: /\.(mp4|MOV)$/,
-      type: 'asset/resource',
-      generator: {
-        filename: 'static/media/[name][ext]',
-      },
-    });
-    return config;
-  },
-};
 
-export default nextConfig;
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin();
+const nextConfig = {};
+
+export default withNextIntl(nextConfig);

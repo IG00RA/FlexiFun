@@ -7,7 +7,7 @@ export const FacebookPixel: React.FC = () => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const fbpId = searchParams.get('fbp') || '';
+    const fbpId = searchParams?.get('fbp') || '';
 
     import('react-facebook-pixel')
       .then(x => x.default)

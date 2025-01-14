@@ -33,39 +33,28 @@ import qual1 from '../img/quality/1.webp';
 import qual2 from '../img/quality/2.webp';
 import qual3 from '../img/quality/3.webp';
 
-export const heroItems = [
-  {
-    text: {
-      first: 'Hero.blockText.first.first',
-      second: 'Hero.blockText.first.second',
-      third: 'Hero.blockText.first.third',
-    },
-    img: 'icon-shuttle-hero',
-  },
-];
-
 export const menuItems = [
-  { label: 'Ako nábor ovplyvňuje vývoj', href: '#reasons' },
-  { label: 'Čo obsahuje táto sada', href: '#about' },
-  { label: 'Čo je súčasťou súpravy', href: '#included' },
-  { label: 'Recenzie', href: '#feedback' },
+  { label: 'Footer.menu.reasons', href: '#reasons' },
+  { label: 'Footer.menu.about', href: '#about' },
+  { label: 'Footer.menu.included', href: '#included' },
+  { label: 'Footer.menu.feedback', href: '#feedback' },
 ];
 
 export const importantItems = [
   {
-    head: 'Rozvoj prostredníctvom vášne:',
+    head: 'Important.items.first.head',
     img: ipm1,
-    text: 'Spojte kreativitu a biologické vedomosti v zaujímavej forme vzdelávacej hry.',
+    text: 'Important.items.first.text',
   },
   {
-    head: 'Vedomá starostlivosť o planétu:',
+    head: 'Important.items.second.head',
     img: ipm2,
-    text: 'Staňte sa súčasťou environmentálnej výchovy svojho dieťaťa.',
+    text: 'Important.items.second.text',
   },
   {
-    head: 'Kritické zručnosti:',
+    head: 'Important.items.third.head',
     img: ipm3,
-    text: 'Rozvíjajú myslenie, pamäť, empatiu a umelecké schopnosti.',
+    text: 'Important.items.third.text',
   },
 ];
 

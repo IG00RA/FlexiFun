@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import '../styles/globals.css';
+import '../../styles/globals.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { Fredoka, Inter } from 'next/font/google';
-import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
 import { Suspense } from 'react';
 import { FacebookPixel } from '@/components/FacebookPixel/FacebookPixel';
 import { ToastContainer } from 'react-toastify';
+import { getMessages } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -55,19 +55,27 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const resolvedParams = await params;
+  const { locale } = resolvedParams;
+
+  const messages = await getMessages({ locale });
   return (
-    <html lang="sk">
-      <body className={`${inter.variable} ${fredoka.variable}`}>
-        {children}
-        <div id="portal-root"></div>
-        <ToastContainer />
-        <Suspense fallback={null}>
-          <FacebookPixel />
-        </Suspense>
-      </body>
+    <html lang={locale}>
+      <NextIntlClientProvider messages={messages}>
+        <body className={`${inter.variable} ${fredoka.variable}`}>
+          {children}
+          <div id="portal-root"></div>
+          <ToastContainer />
+          <Suspense fallback={null}>
+            <FacebookPixel />
+          </Suspense>
+        </body>
+      </NextIntlClientProvider>
     </html>
   );
 }

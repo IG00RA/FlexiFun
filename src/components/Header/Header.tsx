@@ -8,9 +8,14 @@ import { useState } from 'react';
 import { menuItems } from '@/data/data';
 import Button from '../Button/Button';
 import TSvgMedium from '@/helpers/TSvgMedium';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
+import { useTranslations } from 'next-intl';
+import useLanguageStore from '@/store/useLanguageStore';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const t = useTranslations();
+  const { isLang } = useLanguageStore();
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -35,14 +40,22 @@ export default function Header() {
         <ul>
           {menuItems.map((item, index) => (
             <li key={index}>
-              <Link href={item.href}>{item.label}</Link>
+              <Link href={item.href}>{t(item.label)} </Link>
             </li>
           ))}
         </ul>
       </nav>
+      <LanguageSwitcher />
       <Button>
-        Kúpi
-        <TSvgMedium color="#ffffff" />
+        {/* {t('Main.button')} */}
+        {isLang ? (
+          <>
+            Kúpi
+            <TSvgMedium color="#ffffff" />
+          </>
+        ) : (
+          'Купити'
+        )}
       </Button>
       <div
         className={`${styles.burgerWrap} ${

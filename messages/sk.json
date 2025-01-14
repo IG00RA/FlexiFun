@@ -1,0 +1,74 @@
+{
+  "Main": {
+    "button": "Kúpi",
+    "buttonSecond": "Dajte die",
+    "buttonThird": "Objedna"
+  },
+  "Confirm": {
+    "button": "На главную",
+    "buttonLink": "/",
+    "logo": "Mustage",
+    "header": "Спасибо за вашу заявку!",
+    "text": "Ожидайте сообщение от нашего менеджера"
+  },
+  "Hero": {
+    "price": "65€",
+    "priceSecond": "20€",
+    "text": "FlexiFun - divoká príroda savany",
+    "header": "Objavte svet prírody a hrdinských dobrodružstiev pre svoje die",
+    "par": "Vzdelávacia hracia súprava, v ktorej sa učenie biológie stáva vzrušujúcim dobrodružstvom, ktoré aktivuje všetky kľúčové oblasti rozvoja vášho"
+  },
+  "Important": {
+    "text": "Učenie hrou - cesta k budúcemu úspechu",
+    "header": "Pre",
+    "items": {
+      "first": {
+        "head": "Rozvoj prostredníctvom vášne:",
+        "text": "Spojte kreativitu a biologické vedomosti v zaujímavej forme vzdelávacej hry."
+      },
+      "second": {
+        "head": "Vedomá starostlivosť o planétu:",
+        "text": "Staňte sa súčasťou environmentálnej výchovy svojho dieťaťa."
+      },
+      "third": {
+        "head": "Kritické zručnosti:",
+        "text": "Rozvíjajú myslenie, pamäť, empatiu a umelecké schopnosti."
+      }
+    }
+  },
+  "Form": {
+    "header": {
+      "first": "Заполняй форму, ",
+      "second": "мы ответим в течение 30 минут."
+    },
+    "headerText": "Остались вопросы?",
+    "errors": {
+      "nameRequired": "Имя обязательно",
+      "nameLength": "Длина имени до 100 символов",
+      "phoneRequired": "Номер обязателен",
+      "phoneFormat": "Неверный формат номера",
+      "nickRequired": "Никнейм обязателен",
+      "nickFormat": "Неверный формат никнейма",
+      "sendError": "Произошла ошибка, попробуйте позже",
+      "validError": "В форме есть ошибки"
+    },
+    "form": {
+      "namePlaceHolder": "Имя",
+      "name": "Введите имя",
+      "phone": "Введите номер телефона",
+      "button": "Написать нам",
+      "nick": "Введите никнейм в Telegram",
+      "ok": "Форма отправлена"
+    }
+  },
+  "Footer": {
+    "header": "Заполняй форму, мы ответим в течение 30 минут.",
+    "policy": "Политика конфиденциальности",
+    "menu": {
+      "reasons": "Ako nábor ovplyvňuje vývoj",
+      "about": "Čo obsahuje táto sada",
+      "included": "Čo je súčasťou súpravy",
+      "feedback": "Recenzie"
+    }
+  }
+}

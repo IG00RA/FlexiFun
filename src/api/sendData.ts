@@ -112,7 +112,7 @@ export const sendMessage = async (sendData: SendMessageData): Promise<void> => {
     botMessage += 'Імя: <b>' + sendData.formData.name + '</b>\n';
     botMessage += 'Прізвище: <b>' + sendData.formData.surname + '</b>\n';
     botMessage += 'Кількість: <b>' + sendData.formData.quantity + '</b>\n';
-    botMessage += 'Месенджер: <b>' + sendData.formData.name + '</b>\n';
+    botMessage += 'Месенджер: <b>' + sendData.formData.messenger + '</b>\n';
     botMessage += 'Телефон: <b>' + sendData.formData.phone + '</b>\n';
     botMessage += 'Емейл: <b>' + sendData.formData.email + '</b>\n';
   }
