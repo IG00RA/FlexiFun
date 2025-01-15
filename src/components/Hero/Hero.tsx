@@ -5,12 +5,10 @@ import Button from '../Button/Button';
 import TSvgMedium from '@/helpers/TSvgMedium';
 import TSvgSmall from '@/helpers/TSvgSmall';
 import TSvg from '@/helpers/TSvg';
-import useLanguageStore from '@/store/useLanguageStore';
 import { useTranslations } from 'next-intl';
 
-export default function Hero() {
+export default function Hero({ lang }: { lang: string }) {
   const t = useTranslations();
-  const { isLang } = useLanguageStore();
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
@@ -18,7 +16,7 @@ export default function Hero() {
           <p className={styles.text}>{t('Hero.text')}</p>
           <h1 className={styles.header}>
             {t('Hero.header')}
-            {isLang && (
+            {lang === 'sk' && (
               <>
                 <TSvg />
                 a!
@@ -28,7 +26,7 @@ export default function Hero() {
           <div className={styles.heroImg}></div>
           <p className={styles.par}>
             {t('Hero.par')}
-            {isLang && (
+            {lang === 'sk' && (
               <>
                 <span className={styles.symbol}>
                   die
@@ -54,7 +52,7 @@ export default function Hero() {
             </div>
             <Button>
               {t('Main.buttonSecond')}
-              {isLang && (
+              {lang === 'sk' && (
                 <>
                   <TSvgMedium color="#ffffff" />a
                   <TSvgMedium color="#ffffff" />u výlet

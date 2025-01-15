@@ -16,8 +16,10 @@ import CBigSvg from '@/helpers/CBigSvg';
 import CSvg from '@/helpers/CSvg';
 import TSvg from '@/helpers/TSvg';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
-export default function Included() {
+export default function Included({ lang }: { lang: string }) {
+  const t = useTranslations();
   const [loadingImages, setLoadingImages] = useState<boolean[]>(
     Array(originalGalleryImages.length).fill(true)
   );
@@ -73,19 +75,21 @@ export default function Included() {
       </Swiper>
       <div className={styles.parWrap}>
         <h2 className={styles.header}>
-          <CBigSvg color="#ffffff" />o je sú
-          <CSvg color="#ffffff" />
-          as
-          <TSvg color="#ffffff" />
-          ou súpravy
+          {lang === 'sk' && (
+            <>
+              <CBigSvg color="#ffffff" />o je sú
+              <CSvg color="#ffffff" />
+              as
+              <TSvg color="#ffffff" />
+            </>
+          )}
+          {t('Included.header')}
         </h2>
-        <p className={styles.text}>
-          Úplné ponorenie do sveta ekológie a tvorivosti
-        </p>
+        <p className={styles.text}>{t('Included.text')}</p>
         <ul className={styles.list}>
           {includedItems.map((item, index) => (
             <li key={index}>
-              <p className={styles.par}>{item}</p>
+              <p className={styles.par}>{t(item)}</p>
             </li>
           ))}
         </ul>
@@ -95,8 +99,12 @@ export default function Included() {
           <div className={styles.next}></div>
         </div>
         <Button>
-          Objedna
-          <TSvgMedium color="#ffb088" /> sadu
+          {t('Main.buttonThird')}
+          {lang === 'sk' && (
+            <>
+              <TSvgMedium color="#ffffff" /> sadu
+            </>
+          )}
         </Button>
       </div>
     </section>

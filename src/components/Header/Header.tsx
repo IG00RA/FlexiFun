@@ -10,12 +10,14 @@ import Button from '../Button/Button';
 import TSvgMedium from '@/helpers/TSvgMedium';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import { useTranslations } from 'next-intl';
-import useLanguageStore from '@/store/useLanguageStore';
 
-export default function Header() {
+interface HeaderProps {
+  lang: string;
+}
+
+export default function Header({ lang }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations();
-  const { isLang } = useLanguageStore();
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -27,6 +29,7 @@ export default function Header() {
     document.body.style.overflow = 'hidden';
     document.body.style.touchAction = 'none';
   };
+
   return (
     <header className={`${styles.header}`}>
       <Link className={styles.logoWrap} href={`/`}>
@@ -45,17 +48,10 @@ export default function Header() {
           ))}
         </ul>
       </nav>
-      <LanguageSwitcher />
+      <LanguageSwitcher lang={lang} />
       <Button>
-        {/* {t('Main.button')} */}
-        {isLang ? (
-          <>
-            Kúpi
-            <TSvgMedium color="#ffffff" />
-          </>
-        ) : (
-          'Купити'
-        )}
+        {t('Main.button')}
+        {lang === 'sk' && <TSvgMedium color="#ffffff" />}
       </Button>
       <div
         className={`${styles.burgerWrap} ${

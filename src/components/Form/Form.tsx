@@ -9,6 +9,8 @@ import { sendMessage, sendToGoogleScript } from '@/api/sendData';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
 import Icon from '@/helpers/Icon';
+import useLanguageStore from '@/store/useLanguageStore';
+import { useTranslations } from 'next-intl';
 
 interface FormProps {
   toggleForm: () => void;
@@ -17,6 +19,8 @@ interface FormProps {
 export default function Form({ toggleForm, isFormOpen }: FormProps) {
   const [isClient, setIsClient] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const { locale } = useLanguageStore();
+  const t = useTranslations();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -55,17 +59,17 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
     let isValid = true;
 
     if (!formData.name) {
-      newErrors.name = 'Vyžaduje sa meno';
+      newErrors.name = t('Form.errors.nameRequired');
       isValid = false;
     }
 
     if (!formData.phone) {
-      newErrors.phone = 'Vyžaduje sa telefónne číslo';
+      newErrors.phone = t('Form.errors.phoneRequired');
       isValid = false;
     }
 
     if (!formData.nickname) {
-      newErrors.nickname = 'Priezvisko je povinné';
+      newErrors.nickname = t('Form.errors.nickRequired');
       isValid = false;
     }
 
@@ -76,7 +80,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     if (!validateForm()) {
-      toast.error('Vyplňte prosím všetky povinné polia!');
+      toast.error(t('Form.errors.validError'));
       return;
     }
     try {
@@ -97,7 +101,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
         sendToGoogleScript(message),
         await sendMessage(message),
       ]);
-      toast.success('Formulár bol úspešne odoslaný!');
+      toast.success(t('Form.ok'));
       const currentQueryParams = new URLSearchParams(window.location.search);
       const queryParams = currentQueryParams.toString();
 
@@ -105,7 +109,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
 
       toggleForm();
     } catch {
-      toast.error('Formulár sa nepodarilo odoslať, skúste to znova!');
+      toast.error(t('Form.errors.sendError'));
     } finally {
       setIsLoading(false);
     }
@@ -138,7 +142,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
         <button className={styles.closeBtn} onClick={toggleForm} type="button">
           <Icon name="icon-close" width={16} height={16} color="#999" />
         </button>
-        <h2 className={styles.header}>Formulár žiadosti</h2>
+        <h2 className={styles.header}>{t('Form.header')}</h2>
 
         <form className={styles.form} onSubmit={handleSubmit}>
           <label className={styles.label}>
@@ -147,7 +151,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Názov"
+              placeholder={t('Form.form.namePlaceHolder')}
               className={`${styles.input} ${errors.name ? styles.error : ''}`}
               required
             />
@@ -160,18 +164,17 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
               name="nickname"
               value={formData.nickname}
               onChange={handleChange}
-              placeholder="Priezvisko"
+              placeholder={t('Form.form.nickPlaceHolder')}
               className={`${styles.input} ${
                 errors.nickname ? styles.error : ''
               }`}
-              required
             />
             {errors.nickname && (
               <p className={styles.errorText}>{errors.nickname}</p>
             )}
           </label>
 
-          <p className={styles.pricePar}>Počet súprav</p>
+          <p className={styles.pricePar}>{t('Form.form.priceText')}</p>
           <div className={styles.priceWrap}>
             <button
               className={styles.min}
@@ -195,11 +198,12 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
               onClick={() => handleQuantityChange(1)}
             ></button>
             <span className={styles.priceTotal}>
-              ={formData.quantity * 20}€
+              ={formData.quantity * (locale === 'sk' ? 20 : 1320)}
+              {t('Form.form.priceValue')}
             </span>
           </div>
 
-          <p className={styles.pricePar}>Spôsob komunikácie</p>
+          <p className={styles.pricePar}>{t('Form.form.socialPar')}</p>
           <div className={styles.socWrap}>
             <label>
               <input
@@ -239,7 +243,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="Phone number"
+              placeholder={t('Form.form.phone')}
               inputMode="numeric"
               pattern="[\d\+\(\)\-\s]*"
               className={`${styles.input} ${errors.phone ? styles.error : ''}`}
@@ -264,9 +268,13 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
           ></span>
           <div className={`${isLoading ? styles.hidden : styles.formButton}`}>
             <Button type="submit">
-              Dajte die
-              <TSvgMedium color="#ffffff" />a<TSvgMedium color="#ffffff" />u
-              výlet
+              {t('Main.buttonSecond')}
+              {locale === 'sk' && (
+                <>
+                  <TSvgMedium color="#ffffff" />a<TSvgMedium color="#ffffff" />u
+                  výlet
+                </>
+              )}
             </Button>
           </div>
         </form>

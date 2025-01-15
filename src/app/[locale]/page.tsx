@@ -2,7 +2,6 @@ import About from '@/components/About/About';
 import Await from '@/components/Await/Await';
 import Feedback from '@/components/Feedback/Feedback';
 import Footer from '@/components/Footer/Footer';
-import Header from '@/components/Header/Header';
 import Hero from '@/components/Hero/Hero';
 import HowWorks from '@/components/HowWorks/HowWorks';
 import Important from '@/components/Important/Important';
@@ -14,10 +13,9 @@ import Reasons from '@/components/Reasons/Reasons';
 export default function Home() {
   return (
     <>
-      <Header />
-      <main>
-        <Hero />
-        <Important />
+      {/* <main>
+        <Hero lang={lang} />
+        <Important lang={lang} />
         <Reasons />
         <About />
         <Await />
@@ -27,7 +25,7 @@ export default function Home() {
         <Quality />
         <Questions />
       </main>
-      <Footer />
+      <Footer /> */}
     </>
   );
 }

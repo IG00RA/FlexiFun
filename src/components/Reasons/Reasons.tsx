@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './Reasons.module.css';
 import Image from 'next/image';
 import Button from '../Button/Button';
@@ -6,22 +8,28 @@ import TSvgMedium from '@/helpers/TSvgMedium';
 import CSvg from '@/helpers/CSvg';
 import { replaceSymbol } from '@/helpers/replaceSymbol';
 import TSvgSmall from '@/helpers/TSvgSmall';
+import { useTranslations } from 'next-intl';
 
-export default function Reasons() {
+export default function Reasons({ lang }: { lang: string }) {
+  const t = useTranslations();
   return (
     <section id="reasons" className={styles.reasons}>
       <div className={styles.container}>
         <h2 className={styles.header}>
-          4 dôvody, pre
-          <CSvg />o si rodi
-          <CSvg />
-          ia vyberajú FlexiFun
+          {t('Reasons.header')}
+          {lang === 'sk' && (
+            <>
+              <CSvg />o si rodi
+              <CSvg />
+              ia vyberajú FlexiFun
+            </>
+          )}
         </h2>
 
         <ul className={styles.list}>
           {reasonsItems.map((item, index) => (
             <li key={index}>
-              <h3 className={styles.parHead}>{item.head}</h3>
+              <h3 className={styles.parHead}> {t(item.head)}</h3>
               <div className={styles.reasonsImg}>
                 <Image
                   src={item.img}
@@ -34,16 +42,16 @@ export default function Reasons() {
               </div>
               <ul className={styles.parList}>
                 <li>
-                  <p>{replaceSymbol(item.text.first, { t: TSvgSmall })}</p>
+                  <p>{replaceSymbol(t(item.text.first), { t: TSvgSmall })}</p>
                 </li>
                 <li>
-                  <p>{item.text.second}</p>
+                  <p>{t(item.text.second)}</p>
                 </li>
                 <li>
-                  <p>{item.text.third}</p>
+                  <p>{t(item.text.third)}</p>
                 </li>
                 <li>
-                  <p>{item.text.fourth}</p>
+                  <p>{t(item.text.fourth)}</p>
                 </li>
               </ul>
             </li>
@@ -51,8 +59,12 @@ export default function Reasons() {
         </ul>
 
         <Button>
-          Objedna
-          <TSvgMedium color="#ffffff" /> sadu
+          {t('Main.buttonThird')}
+          {lang === 'sk' && (
+            <>
+              <TSvgMedium color="#ffffff" /> sadu
+            </>
+          )}
         </Button>
       </div>
     </section>

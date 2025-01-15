@@ -9,17 +9,15 @@ import TSvg from '@/helpers/TSvg';
 import { replaceSymbol } from '@/helpers/replaceSymbol';
 import TSvgSmall from '@/helpers/TSvgSmall';
 import TSvgMedium from '@/helpers/TSvgMedium';
-import useLanguageStore from '@/store/useLanguageStore';
 import { useTranslations } from 'next-intl';
 
-export default function Important() {
+export default function Important({ lang }: { lang: string }) {
   const t = useTranslations();
-  const { isLang } = useLanguageStore();
   return (
     <section className={styles.important}>
       <h2 className={styles.header}>
         {t('Important.header')}
-        {isLang && (
+        {lang === 'sk' && (
           <>
             <CSvg />o je to pre vaše die
             <TSvg />a dôležité
@@ -41,12 +39,12 @@ export default function Important() {
             ></Image>
             <div className={styles.listWrap}>
               <h3 className={styles.parHead}>
-                {isLang
+                {lang === 'sk'
                   ? replaceSymbol(t(item.head), { t: TSvg, c: CSvg })
                   : t(item.head)}
               </h3>
               <p className={styles.par}>
-                {isLang
+                {lang === 'sk'
                   ? replaceSymbol(t(item.text), { t: TSvgSmall })
                   : t(item.text)}
               </p>
@@ -56,7 +54,7 @@ export default function Important() {
       </ul>
       <Button>
         {t('Main.buttonThird')}
-        {isLang && (
+        {lang === 'sk' && (
           <>
             <TSvgMedium color="#ffffff" /> sadu
           </>

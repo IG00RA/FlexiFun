@@ -13,6 +13,7 @@ import TSvgMedium from '@/helpers/TSvgMedium';
 import CSvg from '@/helpers/CSvg';
 import { useEffect, useState } from 'react';
 import Icon from '@/helpers/Icon';
+import { useTranslations } from 'next-intl';
 
 interface FeedbackItem {
   img: string;
@@ -21,7 +22,8 @@ interface FeedbackItem {
   text: string;
 }
 
-export default function Feedback() {
+export default function Feedback({ lang }: { lang: string }) {
+  const t = useTranslations();
   const [groupedItems, setGroupedItems] = useState<FeedbackItem[][]>([]);
   const [loadingImages, setLoadingImages] = useState<boolean[]>(
     Array(originalGalleryImages.length).fill(true)
@@ -64,13 +66,17 @@ export default function Feedback() {
     <section id="feedback" className={styles.feedback}>
       <div className={styles.container}>
         <h2 className={styles.header}>
-          Spätná väzba od{' '}
-          <span>
-            rodi
-            <CSvg />
-            ov
-          </span>{' '}
-          a odborníkov
+          {t('Feedback.header')}
+          {lang === 'sk' && (
+            <>
+              <span>
+                rodi
+                <CSvg />
+                ov
+              </span>{' '}
+              a odborníkov
+            </>
+          )}
         </h2>
         <div className={styles.paginationWrap}>
           <div className={styles.prev}></div>
@@ -108,7 +114,7 @@ export default function Feedback() {
                     )}
                     <Image
                       src={item.img}
-                      alt={item.head}
+                      alt={t(item.head)}
                       className={styles.sliderImage}
                       onLoad={() => handleImageLoad(index)}
                       width={0}
@@ -116,10 +122,10 @@ export default function Feedback() {
                       sizes="100vw"
                     />
                   </div>
-                  <p className={styles.cardText}>{item.text}</p>
+                  <p className={styles.cardText}>{t(item.text)}</p>
                   <div className={styles.cardFooter}>
-                    <span className={styles.cardSpan}>{item.span}</span>
-                    <h4 className={styles.cardHead}>{item.head}</h4>
+                    <span className={styles.cardSpan}>{t(item.span)}</span>
+                    <h4 className={styles.cardHead}>{t(item.head)}</h4>
                   </div>
                 </div>
               ))}
@@ -128,8 +134,12 @@ export default function Feedback() {
         </Swiper>
 
         <Button>
-          Objedna
-          <TSvgMedium color="#ffffff" /> sadu
+          {t('Main.buttonThird')}
+          {lang === 'sk' && (
+            <>
+              <TSvgMedium color="#ffffff" /> sadu
+            </>
+          )}
         </Button>
       </div>
     </section>

@@ -5,11 +5,8 @@
     "buttonThird": "Objedna"
   },
   "Confirm": {
-    "button": "На главную",
-    "buttonLink": "/",
-    "logo": "Mustage",
-    "header": "Спасибо за вашу заявку!",
-    "text": "Ожидайте сообщение от нашего менеджера"
+    "header": "FlexiFun - divoká príroda savany",
+    "text": "Ďakujeme za objednávku súpravy FlexiFun Savanna! Budeme vás kontaktovať čoskoro prostredníctvom vami zvoleného spôsobu komunikácie. Pripravte sa na vzrušujúce dobrodružstvá vo svete afrických zvierat!"
   },
   "Hero": {
     "price": "65€",
@@ -36,35 +33,238 @@
       }
     }
   },
+  "About": {
+    "header": "om je tento súbor?",
+    "text": "Fascinujúca interaktívna hra - rozprávka",
+    "items": {
+      "first": "Príbeh o zvieratách, ktoré sa spoja, aby zachránili svoj ekosystém.",
+      "second": "Zábavné fakty o prírode a zvieratách z celého sveta.",
+      "third": "Interaktívne úlohy, ktoré premenia učenie na zábavnú hru."
+    }
+  },
+  "Await": {
+    "header": "",
+    "items": {
+      "first": "Spolu s postavičkami z rozprávky bude dieťa zbierať 2D postavičky zvierat a umiestňovať ich na mapu sveta.",
+      "second": "Keď sa ponorí do príbehu, pochopí, že je dôležité starať sa o prírodu, a stane sa skutočným hrdinom pre našu planétu.",
+      "third": "Na konci je jedinečná príležitosť cítiť sa ako súčasť tímu, ktorý zachraňuje Zem."
+    }
+  },
+  "Included": {
+    "header": "ou súpravy",
+    "text": " Úplné ponorenie do sveta ekológie a tvorivosti",
+    "items": {
+      "first": "Zostavte a vyfarbite 16 figúrok zvierat.",
+      "second": "Mapa sveta s prírodnými zónami.",
+      "third": "Príbeh o záchrane savany.",
+      "fourth": "Biologické fakty a pokyny krok za krokom.",
+      "fifth": "Interaktívne úlohy, ktoré vás vtiahnu do príbehu.",
+      "sixth": "Tréningová karta herných mechanizmov."
+    }
+  },
+  "HowWorks": {
+    "header": "Ako to funguje",
+    "text": "Kroky k pohlcujúcemu a pútavému učeniu",
+    "items": {
+      "first": {
+        "head": "Zbierajte figúrky",
+        "text": "Rozvíjajte motorické zručnosti a tvorivé schopnosti."
+      },
+      "second": {
+        "head": "Ponorte sa do histórie.",
+        "text": "Zistite, ako zvieratá zachraňujú svoj ekosystém."
+      },
+      "third": {
+        "head": "Preskúmajte ekosystémy.",
+        "text": "Umiestnite obrázky na mapu podľa rozprávania a preskúmajte biotopy."
+      },
+      "fourth": {
+        "head": "Staňte sa hrdinom prírody.",
+        "text": "Naučte sa riešiť ekologické problémy spolu so zvieratami."
+      }
+    }
+  },
+  "Reasons": {
+    "header": "4 dôvody, pre",
+    "items": {
+      "first": {
+        "head": "Komplexný vývoj mozgu",
+        "text": {
+          "first": "Aktivácia oboch hemisfér prostredníctvom kreativity a logiky.",
+          "second": "Zlepšenie pamäte a koncentrácie o 40 %.",
+          "third": "Rozvoj priestorového myslenia.",
+          "fourth": "Formovanie kritického myslenia."
+        }
+      },
+      "second": {
+        "head": "Environmentálna výchova",
+        "text": {
+          "first": "Pochopenie vzájomných vzťahov v prírode.",
+          "second": "Formovanie zodpovedného prístupu k planéte.",
+          "third": "Rozvíjanie empatie voči živému svetu.",
+          "fourth": "Povedomie o globálnych environmentálnych problémoch."
+        }
+      },
+      "third": {
+        "head": "Emocionálny vývoj",
+        "text": {
+          "first": "Zvyšovanie sebadôvery prostredníctvom tvorivosti.",
+          "second": "Rozvíjanie empatie prostredníctvom príbehu.",
+          "third": "Formovanie environmentálnej zodpovednosti.",
+          "fourth": "Zlepšenie sociálnych zručností."
+        }
+      },
+      "fourth": {
+        "head": "Vzdelávacia hodnota:",
+        "text": {
+          "first": "Učenie sa biológie prostredníctvom fascinujúceho príbehu.",
+          "second": "Pochopenie geografie prostredníctvom práce s mapou.",
+          "third": "Rozšírenie slovnej zásoby.",
+          "fourth": "Rozvoj rozprávačských zručností."
+        }
+      }
+    }
+  },
+  "Feedback": {
+    "header": "Spätná väzba od ",
+    "items": {
+      "first": {
+        "head": "environmentálna pedagogička",
+        "span": "Zuzana",
+        "text": "Nie je to len stavebnica, ale skutočný vzdelávací nástroj pre predškolákov a školákov."
+      },
+      "second": {
+        "head": "mama 6-ročného Mareka",
+        "span": "Zlatica",
+        "text": "Môj syn teraz vie o savane viac ako ja. Každý večer si číta príbeh s postavičkami!"
+      },
+      "third": {
+        "head": "učiteľka materskej školy",
+        "span": "Vlasta",
+        "text": "Skvelý nástroj na rozvoj environmentálneho myslenia u detí. Odporúčam ho kolegom."
+      },
+      "fourth": {
+        "head": "vedúca detského centra",
+        "span": "Tatiana",
+        "text": "V našom vzdelávacom centre sa táto súprava stala medzi deťmi obľúbenou. Učia sa a ani si to nevšimnú."
+      },
+      "fifth": {
+        "head": "mama 4-ročnej Kristíny",
+        "span": "Božena",
+        "text": "Moja dcéra bola nadšená! Nielenže sa naučila zostavovať figúrky, ale začala sa viac zaujímať aj o prírodu."
+      },
+      "sixth": {
+        "head": "otec 3-ročného Jozefa",
+        "span": "Miloš",
+        "text": "Súpravu sme kúpili nášmu synovi k narodeninám. Spoločne sme zbierali zvieratká, čítali príbeh, priraďovali postavičky k mape."
+      },
+      "seventh": {
+        "head": "otec 6-ročného Mateja",
+        "span": "Branislav",
+        "text": "Toto je najlepší darček pre deti, ktoré sa rady učia nové veci. Náš syn teraz každému rozpráva o zvieratách a ich domoch."
+      },
+      "eighth": {
+        "head": "mama 5-ročnej Avy",
+        "span": "Lenka",
+        "text": "Teraz moja dcéra organizuje výstavy svojich figúrok pre celú rodinu a rozpráva o každom zvierati."
+      },
+      "ninth": {
+        "head": "mama 4-ročného Samuela",
+        "span": "Dagmar",
+        "text": "Môj syn zbožňuje zbieranie figúrok! Je na seba hrdý po každom vyriešenom probléme."
+      },
+      "ten": {
+        "head": "mama 4-ročnej Michaely",
+        "span": "Petronela",
+        "text": "Moja dcéra sa predtým o zvieratá nezaujímala, ale teraz si každý deň pýta nový príbeh."
+      },
+      "eleventh": {
+        "head": "mama 3-ročného Tomasza",
+        "span": "Ludmila",
+        "text": "Nikdy som si nemyslel, že obyčajná hra môže byť pre dieťa taká pútavá. Teraz vieme všetko o klimatických pásmach!"
+      },
+      "twelfth": {
+        "head": "mama 6-ročnej Zuzany",
+        "span": "Stanislava",
+        "text": "Dieťa je z kartičiek so zvieratkami nadšené! Každý večer vymýšľa nové príbehy o ich dobrodružstvách."
+      }
+    }
+  },
+  "Quality": {
+    "header": "Zabezpe",
+    "text": "Len to najlepšie pre vaše dieťa",
+    "items": {
+      "first": "Materiály šetrné k životnému prostrediu.",
+      "second": "Vypracované s prispením pedagógov a odborníkov na životné prostredie.",
+      "third": "Certifikované podľa noriem kvality."
+    }
+  },
+  "Questions": {
+    "header": "asto kladené otázky",
+    "text": "Len to najlepšie pre vaše dieťa",
+    "items": {
+      "first": {
+        "head": "Aký vek je vhodný na zápis?",
+        "text": "Od štyroch rokov"
+      },
+      "second": {
+        "head": "Z akých materiálov sú vyrobené?",
+        "text": "Ekologická lepenka, papier a biologicky rozložiteľné plasty."
+      },
+      "third": {
+        "head": "Dá sa súprava opätovne použiť?",
+        "text": "Áno, všetky figúrky a mapa sveta sú vyrobené z odolných materiálov, ktoré sa dajú opakovane použiť."
+      },
+      "fourth": {
+        "head": "Sú materiály bezpečné?",
+        "text": "Áno, súprava je vyrobená z ekologických a pre deti bezpečných materiálov certifikovaných podľa noriem kvality."
+      },
+      "fifth": {
+        "head": "Obsahuje súprava nápovedy k úlohám?",
+        "text": "Áno, v knižke s príbehmi sú pokyny krok za krokom a nápovedy, ktoré pomôžu vášmu dieťaťu pri riešení úloh."
+      },
+      "sixth": {
+        "head": "Ako dlho trvá zostavenie jednej figúrky?",
+        "text": "Zostavenie figúrky trvá v priemere 5 až 30 minút v závislosti od zložitosti figúrky a veku dieťaťa."
+      },
+      "seventh": {
+        "head": "Aké témy sa v príbehu objavujú?",
+        "text": "Príbeh je o priateľstve zvierat, vzájomnej pomoci a ochrane ekosystémov a o tom, ako môžu ľudia pomôcť prírode."
+      },
+      "eighth": {
+        "head": "Dokáže dieťa vykonávať úlohy samostatne?",
+        "text": "Väčšina detí to zvládne sama, ale mladšie deti môžu potrebovať pomoc rodičov."
+      },
+      "ninth": {
+        "head": "Je táto súprava vhodná na vyučovanie v materskej škole?",
+        "text": "Áno, možno ju použiť na hodinách ekológie, biológie a geografie pre najmladšie triedy a predškolské skupiny."
+      }
+    }
+  },
   "Form": {
-    "header": {
-      "first": "Заполняй форму, ",
-      "second": "мы ответим в течение 30 минут."
-    },
-    "headerText": "Остались вопросы?",
+    "header": "Formulár žiadosti",
+    "ok": "Formulár bol úspešne odoslaný!",
     "errors": {
-      "nameRequired": "Имя обязательно",
-      "nameLength": "Длина имени до 100 символов",
-      "phoneRequired": "Номер обязателен",
-      "phoneFormat": "Неверный формат номера",
-      "nickRequired": "Никнейм обязателен",
-      "nickFormat": "Неверный формат никнейма",
-      "sendError": "Произошла ошибка, попробуйте позже",
-      "validError": "В форме есть ошибки"
+      "nameRequired": "Vyžaduje sa meno",
+      "phoneRequired": "Vyžaduje sa telefónne číslo",
+      "nickRequired": "Priezvisko je povinné",
+      "sendError": "Formulár sa nepodarilo odoslať, skúste to znova!",
+      "validError": "Vyplňte prosím všetky povinné polia!"
     },
     "form": {
-      "namePlaceHolder": "Имя",
-      "name": "Введите имя",
-      "phone": "Введите номер телефона",
-      "button": "Написать нам",
-      "nick": "Введите никнейм в Telegram",
-      "ok": "Форма отправлена"
+      "namePlaceHolder": "Názov",
+      "nickPlaceHolder": "Priezvisko",
+      "priceText": "Počet súprav",
+      "price": 20,
+      "priceValue": "€",
+      "socialPar": "Spôsob komunikácie",
+      "phone": "Phone number"
     }
   },
   "Footer": {
-    "header": "Заполняй форму, мы ответим в течение 30 минут.",
-    "policy": "Политика конфиденциальности",
+    "policy": "Zmluva s používateľom",
     "menu": {
+      "menu": "Ponuka",
       "reasons": "Ako nábor ovplyvňuje vývoj",
       "about": "Čo obsahuje táto sada",
       "included": "Čo je súčasťou súpravy",

@@ -10,8 +10,10 @@ import CBigSvg from '@/helpers/CBigSvg';
 import { replaceSymbol } from '@/helpers/replaceSymbol';
 import TSvgSmall from '@/helpers/TSvgSmall';
 import CSvgMedium from '@/helpers/CSvgMedium';
+import { useTranslations } from 'next-intl';
 
-export default function Questions() {
+export default function Questions({ lang }: { lang: string }) {
+  const t = useTranslations();
   const [openIndices, setOpenIndices] = useState<number[]>([]);
 
   const toggleDropdown = (index: number): void => {
@@ -23,8 +25,8 @@ export default function Questions() {
   return (
     <section id="questions" className={styles.questions}>
       <h2 className={styles.header}>
-        <CBigSvg />
-        asto kladené otázky
+        {lang === 'sk' && <CBigSvg />}
+        {t('Questions.header')}
       </h2>
 
       <ul className={styles.list}>
@@ -42,7 +44,7 @@ export default function Questions() {
 
                 <h3 className={styles.parHead}>
                   {replaceSymbol(
-                    item.head,
+                    t(item.head),
                     { t: TSvgMedium, c: CSvgMedium },
                     { tProps: { top: '2px' }, cProps: { top: '4px' } }
                   )}
@@ -62,14 +64,18 @@ export default function Questions() {
                 openIndices.includes(index) ? `${styles.open}` : ''
               }`}
             >
-              {replaceSymbol(item.text, { t: TSvgSmall })}
+              {replaceSymbol(t(item.text), { t: TSvgSmall })}
             </p>
           </li>
         ))}
       </ul>
       <Button>
-        Objedna
-        <TSvgMedium color="#ffffff" /> sadu
+        {t('Main.buttonThird')}
+        {lang === 'sk' && (
+          <>
+            <TSvgMedium color="#ffffff" /> sadu
+          </>
+        )}
       </Button>
     </section>
   );
