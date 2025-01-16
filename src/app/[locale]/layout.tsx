@@ -28,7 +28,7 @@ const inter = Inter({
 });
 
 const fredoka = Fredoka({
-  subsets: ['latin'],
+  subsets: ['latin', 'hebrew'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font_fredoka',
   adjustFontFallback: false,
@@ -103,7 +103,11 @@ export default async function RootLayout({
         />
       </head>
       <NextIntlClientProvider messages={messages}>
-        <body className={`${inter.variable} ${fredoka.variable}`}>
+        <body
+          className={`${inter.variable} ${fredoka.variable} ${
+            locale === 'uk' ? 'uk-styles' : ''
+          }`}
+        >
           <Header lang={locale} />
           <main>
             <Hero lang={locale} />

@@ -4,6 +4,8 @@ import Icon from '@/helpers/Icon';
 import Link from 'next/link';
 import Button from '../Button/Button';
 import TSvgMedium from '@/helpers/TSvgMedium';
+import { useTranslations } from 'next-intl';
+import useLanguageStore from '@/store/useLanguageStore';
 
 type MobMenuProps = {
   isMenuOpen: boolean;
@@ -11,6 +13,8 @@ type MobMenuProps = {
 };
 
 export default function MobMenu({ isMenuOpen, closeMenu }: MobMenuProps) {
+  const { locale } = useLanguageStore();
+  const t = useTranslations();
   return (
     <div
       onClick={closeMenu}
@@ -29,7 +33,7 @@ export default function MobMenu({ isMenuOpen, closeMenu }: MobMenuProps) {
             {menuItems.map((item, index) => (
               <li key={index}>
                 <Link onClick={closeMenu} href={item.href}>
-                  {item.label}
+                  {t(item.label)}
                 </Link>
               </li>
             ))}
@@ -42,11 +46,11 @@ export default function MobMenu({ isMenuOpen, closeMenu }: MobMenuProps) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Zmluva s používateľom
+          {t('Footer.policy')}
         </a>
         <Button>
-          Kúpi
-          <TSvgMedium color="#ffb088" />
+          {t('Main.button')}
+          {locale === 'sk' && <TSvgMedium color="#ffb088" />}
         </Button>
       </div>
     </div>

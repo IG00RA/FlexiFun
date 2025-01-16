@@ -21,9 +21,9 @@
   letter-spacing: 0.03em;
   font-size: var(--fs_xlarge);
   margin-bottom: 40px;
+  text-align: center;
 
   @media (min-width: 768px) {
-    text-align: center;
     font-size: var(--fs_xxxlarge);
     margin-bottom: 60px;
   }

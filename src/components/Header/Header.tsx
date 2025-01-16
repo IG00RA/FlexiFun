@@ -48,20 +48,22 @@ export default function Header({ lang }: HeaderProps) {
           ))}
         </ul>
       </nav>
-      <LanguageSwitcher lang={lang} />
-      <Button>
-        {t('Main.button')}
-        {lang === 'sk' && <TSvgMedium color="#ffffff" />}
-      </Button>
-      <div
-        className={`${styles.burgerWrap} ${
-          isMenuOpen ? styles.burgerOpen : ''
-        }`}
-        onClick={isMenuOpen ? closeMenu : openMenu}
-      >
-        <span className={styles.line}></span>
-        <span className={styles.line}></span>
-        <span className={styles.line}></span>
+      <div className={`${styles.lang_wrap}`}>
+        <LanguageSwitcher lang={lang} />
+        <Button>
+          {t('Main.button')}
+          {lang === 'sk' && <TSvgMedium color="#ffffff" />}
+        </Button>
+        <div
+          className={`${styles.burgerWrap} ${
+            isMenuOpen ? styles.burgerOpen : ''
+          }`}
+          onClick={isMenuOpen ? closeMenu : openMenu}
+        >
+          <span className={styles.line}></span>
+          <span className={styles.line}></span>
+          <span className={styles.line}></span>
+        </div>
       </div>
 
       <MobMenu isMenuOpen={isMenuOpen} closeMenu={closeMenu} />

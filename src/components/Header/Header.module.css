@@ -6,48 +6,77 @@
   padding: 16px;
   background-color: #fefefe;
 
+  @media (min-width: 768px) {
+    padding: 18px 60px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 24px 80px;
+  }
+
+  @media (min-width: 1060px) {
+    padding: 24px 10px;
+  }
+
+  @media (min-width: 1408px) {
+    padding: 36px 5px;
+    max-width: var(--desktop);
+    margin: 0 auto;
+  }
+}
+
+.lang_wrap {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+
   & > button {
     display: none;
   }
 
-  @media (min-width: 768px) {
-    padding: 18px;
-  }
-
-  @media (min-width: 1024px) {
-    padding: 24px;
-    gap: 16px;
-
+  @media (min-width: 1060px) {
     & > button {
       display: block;
-      margin: 0;
-      padding: 12px 40px;
+      width: 140px;
+      flex-shrink: 0;
+      padding: 10px;
     }
   }
 
-  @media (min-width: 1408px) {
-    padding: 36px;
-    max-width: var(--desktop);
-    margin: 0 auto;
+  @media (min-width: 1085px) {
     & > button {
-      padding: 17px 80px;
+      width: 160px;
     }
   }
 
-  @media (min-width: 1450px) {
-    padding: 36px 0;
+  @media (min-width: 1150px) {
+    & > button {
+      width: 180px;
+      padding: 12px;
+    }
+  }
+
+  @media (min-width: 1328px) {
+    gap: 16px;
+  }
+  @media (min-width: 1408px) {
+    & > button {
+      width: 220px;
+      padding: 17px;
+    }
   }
 }
 
 .nav {
   display: none;
 
-  @media (min-width: 920px) {
+  @media (min-width: 1060px) {
     display: block;
+    flex-shrink: 0;
 
     & ul {
       display: flex;
-      gap: 15px;
+      gap: 10px;
 
       & li {
         & a {
@@ -71,7 +100,7 @@
 
   @media (min-width: 1250px) {
     & ul {
-      gap: 32px;
+      gap: 17px;
       & li {
         & a {
           font-size: var(--fs_medium);
@@ -115,6 +144,7 @@
 }
 
 .burgerWrap {
+  margin-left: 14px;
   width: 48px;
   height: 40px;
   display: flex;
@@ -126,7 +156,7 @@
   cursor: pointer;
   transition: margin 0.3s ease;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1060px) {
     display: none;
   }
 }

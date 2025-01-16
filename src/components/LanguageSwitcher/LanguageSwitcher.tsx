@@ -31,15 +31,18 @@ const LanguageSwitcher = ({ lang }: { lang: string }) => {
   return (
     <div className={styles.language}>
       <button
-        className={`${styles.button} ${lang === 'sk' && styles.buttonActive}`}
+        className={`${styles.button} ${
+          lang === 'sk' ? styles.buttonActive : styles.buttonUnActive
+        }`}
         onClick={() => handleLanguageChange('sk')}
         type="button"
       >
         SK
       </button>
-      <span>/</span>
       <button
-        className={`${styles.button} ${lang === 'uk' && styles.buttonActive}`}
+        className={`${styles.button} ${
+          lang === 'uk' ? styles.buttonActive : styles.buttonUnActive
+        }`}
         onClick={() => handleLanguageChange('uk')}
         type="button"
       >

@@ -292,4 +292,9 @@ export const questionsItems = [
     numb: '9',
     text: 'Questions.items.ninth.text',
   },
+  {
+    head: 'Questions.items.ten.head',
+    numb: '10',
+    text: 'Questions.items.ten.text',
+  },
 ];

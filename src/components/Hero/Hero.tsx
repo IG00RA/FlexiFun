@@ -44,7 +44,11 @@ export default function Hero({ lang }: { lang: string }) {
             )}
           </p>
           <div className={styles.buttonWrap}>
-            <div className={styles.priceWrap}>
+            <div
+              className={`${styles.priceWrap} ${
+                lang === 'uk' && styles.priceWrapUk
+              }`}
+            >
               <span className={styles.styledPrice}>{t('Hero.price')}</span>
               <span className={styles.styledPriceSecond}>
                 {t('Hero.priceSecond')}

@@ -44,7 +44,9 @@
 
   @media (min-width: 1024px) {
     border-radius: 32px;
-    padding: 101px 60px;
+    padding: 0 60px;
+    align-items: center;
+    height: 296px;
     margin-bottom: 100px;
   }
 

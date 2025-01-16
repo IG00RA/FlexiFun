@@ -23,6 +23,6 @@
   @media (min-width: 768px) {
     font-size: var(--fs_large);
     letter-spacing: 0.03em;
-    padding: 23px 62px;
+    padding: 23px 60px;
   }
 }

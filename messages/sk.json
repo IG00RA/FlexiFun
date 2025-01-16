@@ -238,6 +238,10 @@
       "ninth": {
         "head": "Je táto súprava vhodná na vyučovanie v materskej škole?",
         "text": "Áno, možno ju použiť na hodinách ekológie, biológie a geografie pre najmladšie triedy a predškolské skupiny."
+      },
+      "ten": {
+        "head": "Kto je výrobcom?",
+        "text": "Výroba sa nachádza na Slovensku"
       }
     }
   },
