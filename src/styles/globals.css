@@ -86,3 +86,7 @@ img {
     letter-spacing: normal;
   }
 }
+
+#confirm ~ *:not(#portal-root) {
+  display: none !important;
+}

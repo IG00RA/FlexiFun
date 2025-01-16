@@ -21,7 +21,7 @@ const LanguageSwitcher = ({ lang }: { lang: string }) => {
 
   useEffect(() => {
     setLocale(lang);
-  }, [lang]);
+  }, [setLocale, lang]);
 
   const handleLanguageChange = (lang: string) => {
     const path = pathname.split('/').slice(2).join('/');

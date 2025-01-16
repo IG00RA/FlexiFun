@@ -7,15 +7,18 @@ import Button from '../Button/Button';
 import { menuItems } from '@/data/data';
 import TSvgMedium from '@/helpers/TSvgMedium';
 import { useTranslations } from 'next-intl';
+import useLanguageStore from '@/store/useLanguageStore';
 
 export default function Footer({ lang }: { lang: string }) {
   const t = useTranslations();
+
+  const { query } = useLanguageStore();
 
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.fistWrap}>
-          <Link className={styles.logoWrap} href={`/`}>
+          <Link className={styles.logoWrap} href={`/${lang}/${query}`}>
             <Icon name="icon-logoMob" width={202} height={60} color={'#fff'} />
           </Link>
           <div className={styles.menuWrap}>
@@ -34,7 +37,7 @@ export default function Footer({ lang }: { lang: string }) {
         <div className={styles.secondWrap}>
           <a
             className={styles.policy}
-            href="/privacy-policy"
+            href={t('Footer.policyLink')}
             target="_blank"
             rel="noopener noreferrer"
           >

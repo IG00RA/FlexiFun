@@ -249,6 +249,7 @@
     "ok": "Форму успішно надіслано!",
     "errors": {
       "nameRequired": "Ім'я обов'язкове",
+      "communicationRequired": "Оберіть спосіб зв'язку",
       "phoneRequired": "Телефон обов'язковий",
       "nickRequired": "Прізвище обов'язкове",
       "sendError": "Не вдалося надіслати форму, спробуйте ще раз!",
@@ -259,13 +260,14 @@
       "nickPlaceHolder": "Прізвище",
       "priceText": "Кількість наборів",
       "price": 20,
-      "priceValue": "€",
+      "priceValue": "₴",
       "socialPar": "Спосіб зв'язку",
       "phone": "Номер телефону"
     }
   },
   "Footer": {
     "policy": "Договір з користувачем",
+    "policyLink": "/privacy-policy-uk",
     "menu": {
       "menu": "Меню",
       "reasons": "Як набір впливає на розвиток",

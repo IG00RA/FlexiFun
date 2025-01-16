@@ -19,7 +19,7 @@ interface FormProps {
 export default function Form({ toggleForm, isFormOpen }: FormProps) {
   const [isClient, setIsClient] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { locale } = useLanguageStore();
+  const { locale, query } = useLanguageStore();
   const t = useTranslations();
 
   const [formData, setFormData] = useState({
@@ -35,6 +35,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
     name: '',
     phone: '',
     nickname: '',
+    communication: '',
   });
 
   const router = useRouter();
@@ -55,7 +56,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
   };
 
   const validateForm = (): boolean => {
-    const newErrors = { name: '', phone: '', nickname: '' };
+    const newErrors = { name: '', phone: '', nickname: '', communication: '' };
     let isValid = true;
 
     if (!formData.name) {
@@ -70,6 +71,11 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
 
     if (!formData.nickname) {
       newErrors.nickname = t('Form.errors.nickRequired');
+      isValid = false;
+    }
+
+    if (!formData.communication) {
+      newErrors.communication = t('Form.errors.communicationRequired');
       isValid = false;
     }
 
@@ -102,10 +108,8 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
         await sendMessage(message),
       ]);
       toast.success(t('Form.ok'));
-      const currentQueryParams = new URLSearchParams(window.location.search);
-      const queryParams = currentQueryParams.toString();
 
-      router.push(queryParams ? `/confirm?${queryParams}` : `/confirm`);
+      router.push(`/${locale}/confirm${query}`);
 
       toggleForm();
     } catch {
@@ -235,6 +239,9 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
               />
               Viber
             </label>
+            {errors.communication && (
+              <p className={styles.errorText}>{errors.communication}</p>
+            )}
           </div>
 
           <label className={styles.label}>

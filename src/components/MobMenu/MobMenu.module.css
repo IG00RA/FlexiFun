@@ -21,7 +21,9 @@
 .burgerMenu {
   width: var(--container);
   margin: 0 auto;
+}
 
+.btn_wrap {
   & > button {
     color: #ffb088;
     background: var(--background);

@@ -84,15 +84,17 @@ export async function generateMetadata(locale: string): Promise<Metadata> {
 
 export default async function RootLayout({
   params,
+  children,
 }: {
   params: Promise<{ locale: string }>;
+  children: React.ReactNode;
 }) {
   const resolvedParams = await params;
   const { locale } = resolvedParams;
-
   const metadata = await generateMetadata(locale);
 
   const messages = await getMessages({ locale });
+
   return (
     <html lang={locale}>
       <head>
@@ -109,6 +111,7 @@ export default async function RootLayout({
           }`}
         >
           <Header lang={locale} />
+          {children}
           <main>
             <Hero lang={locale} />
             <Important lang={locale} />

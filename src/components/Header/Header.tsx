@@ -10,6 +10,7 @@ import Button from '../Button/Button';
 import TSvgMedium from '@/helpers/TSvgMedium';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import { useTranslations } from 'next-intl';
+import useLanguageStore from '@/store/useLanguageStore';
 
 interface HeaderProps {
   lang: string;
@@ -18,6 +19,8 @@ interface HeaderProps {
 export default function Header({ lang }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations();
+
+  const { query } = useLanguageStore();
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -32,10 +35,10 @@ export default function Header({ lang }: HeaderProps) {
 
   return (
     <header className={`${styles.header}`}>
-      <Link className={styles.logoWrap} href={`/`}>
+      <Link className={styles.logoWrap} href={`/${lang}/${query}`}>
         <Icon name="icon-logoMob" width={116} height={35} />
       </Link>
-      <Link className={styles.logDesk} href={`/`}>
+      <Link className={styles.logDesk} href={`/${lang}/${query}`}>
         <Icon name="icon-logoDesk" width={220} height={64} />
       </Link>
 
@@ -43,7 +46,9 @@ export default function Header({ lang }: HeaderProps) {
         <ul>
           {menuItems.map((item, index) => (
             <li key={index}>
-              <Link href={item.href}>{t(item.label)} </Link>
+              <Link href={`/${lang}/${query}${item.href}`}>
+                {t(item.label)}
+              </Link>
             </li>
           ))}
         </ul>

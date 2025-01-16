@@ -13,8 +13,8 @@ type MobMenuProps = {
 };
 
 export default function MobMenu({ isMenuOpen, closeMenu }: MobMenuProps) {
-  const { locale } = useLanguageStore();
   const t = useTranslations();
+  const { query, locale } = useLanguageStore();
   return (
     <div
       onClick={closeMenu}
@@ -24,7 +24,11 @@ export default function MobMenu({ isMenuOpen, closeMenu }: MobMenuProps) {
         className={styles.burgerMenu}
         onClick={event => event.stopPropagation()}
       >
-        <Link className={styles.logoWrap} href={`/`}>
+        <Link
+          className={styles.logoWrap}
+          onClick={closeMenu}
+          href={`/${locale}/${query}`}
+        >
           <Icon name="icon-logoMob" width={116} height={35} color={'#fff'} />
         </Link>
 
@@ -32,7 +36,10 @@ export default function MobMenu({ isMenuOpen, closeMenu }: MobMenuProps) {
           <ul>
             {menuItems.map((item, index) => (
               <li key={index}>
-                <Link onClick={closeMenu} href={item.href}>
+                <Link
+                  onClick={closeMenu}
+                  href={`/${locale}/${query}${item.href}`}
+                >
                   {t(item.label)}
                 </Link>
               </li>
@@ -42,16 +49,18 @@ export default function MobMenu({ isMenuOpen, closeMenu }: MobMenuProps) {
 
         <a
           className={styles.policy}
-          href="/"
+          href={t('Footer.policyLink')}
           target="_blank"
           rel="noopener noreferrer"
         >
           {t('Footer.policy')}
         </a>
-        <Button>
-          {t('Main.button')}
-          {locale === 'sk' && <TSvgMedium color="#ffb088" />}
-        </Button>
+        <div className={styles.btn_wrap} onClick={closeMenu}>
+          <Button>
+            {t('Main.button')}
+            {locale === 'sk' && <TSvgMedium color="#ffb088" />}
+          </Button>
+        </div>
       </div>
     </div>
   );

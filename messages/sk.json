@@ -251,6 +251,7 @@
     "errors": {
       "nameRequired": "Vyžaduje sa meno",
       "phoneRequired": "Vyžaduje sa telefónne číslo",
+      "communicationRequired": "Vyberte spôsob komunikácie",
       "nickRequired": "Priezvisko je povinné",
       "sendError": "Formulár sa nepodarilo odoslať, skúste to znova!",
       "validError": "Vyplňte prosím všetky povinné polia!"
@@ -267,6 +268,7 @@
   },
   "Footer": {
     "policy": "Zmluva s používateľom",
+    "policyLink": "/privacy-policy",
     "menu": {
       "menu": "Ponuka",
       "reasons": "Ako nábor ovplyvňuje vývoj",

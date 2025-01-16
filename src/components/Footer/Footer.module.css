@@ -43,7 +43,7 @@
     & > button {
       width: 220px;
       height: 64px;
-      padding: 11px 60px;
+      padding: 11px;
     }
   }
 }

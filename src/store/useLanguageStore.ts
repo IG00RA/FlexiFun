@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 
 interface LanguageState {
+  confirm: boolean;
+  setConfirm: (confirm: boolean) => void;
   query: string;
   setQuery: (query: string) => void;
   locale: string;
@@ -8,6 +10,8 @@ interface LanguageState {
 }
 
 const useLanguageStore = create<LanguageState>(set => ({
+  confirm: false,
+  setConfirm: confirm => set({ confirm }),
   query: '',
   setQuery: query => set({ query }),
   locale: '',
