@@ -1,21 +1,34 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": {
+    "uk": "FlexiFun – дика природа Савани",
+    "sk": "FlexiFun – divoká príroda savany"
+  },
+  "short_name": {
+    "uk": "FlexiFun",
+    "sk": "FlexiFun"
+  },
+  "description": {
+    "uk": "Відкрийте світ природи та героїчних пригод для вашої дитини! FlexiFun – дика природа Савани – це унікальний розвивальний ігровий набір, який перетворює вивчення біології на захопливу подорож. Завдяки інтерактивним завданням і цікавим викликам дитина досліджує світ дикої природи, одночасно розвиваючи мислення, уяву та пізнавальні навички.",
+    "sk": "Objavte svet prírody a hrdinských dobrodružstiev pre vaše dieťa! FlexiFun – divoká príroda savany je jedinečná vývojová súprava, ktorá mení učenie biológie na fascinujúcu cestu. Vďaka interaktívnym úlohám a zaujímavým výzvam dieťa skúma svet divokej prírody a zároveň rozvíja myslenie, predstavivosť a kognitívne schopnosti."
+  },
   "icons": [
     {
-      "src": "/web-app-manifest-192x192.png",
+      "src": "/assets/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/web-app-manifest-512x512.png",
+      "src": "/assets/web-app-manifest-512x512.jpg",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "theme_color": "#ff9466 ",
+  "background_color": "#f1f1f6",
+  "display": "standalone",
+  "lang": ["uk", "sk"],
+  "start_url": "/uk",
+  "scope": "/"
 }

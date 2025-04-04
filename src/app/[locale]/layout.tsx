@@ -36,15 +36,21 @@ const fredoka = Fredoka({
 
 const localizedMetadata: Record<
   string,
-  { title: string; description: string }
+  { title: string; description: string; keywords: string }
 > = {
-  sk: {
-    title: 'FlexiFun - divoká príroda savany',
-    description: 'FlexiFun - divoká príroda savany',
-  },
   uk: {
-    title: 'FlexiFun - Дика природа савани',
-    description: 'FlexiFun - Дика природа савани',
+    title: 'FlexiFun – дика природа Савани',
+    description:
+      'Відкрийте світ природи та героїчних пригод для вашої дитини! FlexiFun – дика природа Савани – це унікальний розвивальний ігровий набір, який перетворює вивчення біології на захопливу подорож. Завдяки інтерактивним завданням і цікавим викликам дитина досліджує світ дикої природи, одночасно розвиваючи мислення, уяву та пізнавальні навички.',
+    keywords:
+      'FlexiFun, дика природа, Савана, біологія для дітей, навчання через гру, інтерактивні завдання, розвиток мислення, освітні ігри',
+  },
+  sk: {
+    title: 'FlexiFun – divoká príroda savany',
+    description:
+      'Objavte svet prírody a hrdinských dobrodružstiev pre vaše dieťa! FlexiFun – divoká príroda savany je jedinečná vývojová súprava, ktorá mení učenie biológie na fascinujúcu cestu. Vďaka interaktívnym úlohám a zaujímavým výzvam dieťa skúma svet divokej prírody a zároveň rozvíja myslenie, predstavivosť a kognitívne schopnosti.',
+    keywords:
+      'FlexiFun, divoká príroda, savana, biológia pre deti, učenie hrou, interaktívne úlohy, rozvoj myslenia, vzdelávacie hry',
   },
 };
 
@@ -62,13 +68,26 @@ export async function generateMetadata(locale: string): Promise<Metadata> {
       ],
     },
     manifest: '/assets/site.webmanifest',
+    twitter: {
+      card: 'summary_large_image',
+      title: localizedData.title,
+      description: localizedData.description,
+      images: [
+        {
+          url: '/assets/opengraph-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: localizedData.title,
+        },
+      ],
+    },
     openGraph: {
       title: localizedData.title,
       description: localizedData.description,
       type: 'website',
       images: [
         {
-          url: '/assets/web-app-manifest-512x512.png',
+          url: '/assets/opengraph-image.jpg',
           width: 1200,
           height: 630,
           alt: localizedData.title,
