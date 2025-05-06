@@ -11,6 +11,7 @@
   --main_color: linear-gradient(106.5deg, #ff9466 -0.23%, #ffb088 100%);
   --main_text_color: #000000;
   --second_text_color: #ffffff;
+  --modal_overlay: rgba(202, 202, 202, 0.7);
 
   --fs_small: 14px;
   --fs_xsmall: 16px;

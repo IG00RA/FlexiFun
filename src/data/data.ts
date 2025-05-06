@@ -7,14 +7,50 @@ import reas2 from '../img/reasons/2.webp';
 import reas3 from '../img/reasons/3.webp';
 import reas4 from '../img/reasons/4.webp';
 
-import slider1 from '../img/slider/1.webp';
-import slider2 from '../img/slider/2.webp';
-import slider3 from '../img/slider/3.webp';
-import slider4 from '../img/slider/4.webp';
-import slider5 from '../img/slider/5.webp';
-import slider6 from '../img/slider/6.webp';
-import slider7 from '../img/slider/7.webp';
-import slider8 from '../img/slider/8.webp';
+import slider1 from '../img/uk/1.webp';
+import slider2 from '../img/uk/2.webp';
+import slider3 from '../img/uk/3.webp';
+import slider4 from '../img/uk/4.webp';
+import slider5 from '../img/uk/5.webp';
+import slider6 from '../img/uk/6.webp';
+import slider7 from '../img/uk/7.webp';
+import slider8 from '../img/uk/8.webp';
+import slider9 from '../img/uk/9.webp';
+import slider10 from '../img/uk/10.webp';
+import slider11 from '../img/uk/11.webp';
+import slider12 from '../img/uk/12.webp';
+import slider13 from '../img/uk/13.webp';
+import slider14 from '../img/uk/14.webp';
+import slider15 from '../img/uk/15.webp';
+import slider16 from '../img/uk/16.webp';
+import slider17 from '../img/uk/17.webp';
+import slider18 from '../img/uk/18.webp';
+import slider19 from '../img/uk/19.webp';
+import slider20 from '../img/uk/20.webp';
+import slider21 from '../img/uk/21.webp';
+import slider22 from '../img/uk/22.webp';
+
+import sliderSK1 from '../img/sk/1.webp';
+import sliderSK2 from '../img/sk/2.webp';
+import sliderSK3 from '../img/sk/3.webp';
+import sliderSK4 from '../img/sk/4.webp';
+import sliderSK5 from '../img/sk/5.webp';
+import sliderSK6 from '../img/sk/6.webp';
+import sliderSK7 from '../img/sk/7.webp';
+import sliderSK8 from '../img/sk/8.webp';
+import sliderSK9 from '../img/sk/9.webp';
+import sliderSK10 from '../img/sk/10.webp';
+import sliderSK11 from '../img/sk/11.webp';
+import sliderSK12 from '../img/sk/12.webp';
+import sliderSK13 from '../img/sk/13.webp';
+import sliderSK14 from '../img/sk/14.webp';
+import sliderSK15 from '../img/sk/15.webp';
+import sliderSK16 from '../img/sk/16.webp';
+import sliderSK17 from '../img/sk/17.webp';
+import sliderSK18 from '../img/sk/18.webp';
+import sliderSK19 from '../img/sk/19.webp';
+import sliderSK20 from '../img/sk/20.webp';
+import sliderSK21 from '../img/sk/21.webp';
 
 import feed1 from '../img/feedback/1.webp';
 import feed2 from '../img/feedback/2.webp';
@@ -131,6 +167,44 @@ export const slideItems = [
   slider6,
   slider7,
   slider8,
+  slider9,
+  slider10,
+  slider11,
+  slider12,
+  slider13,
+  slider14,
+  slider15,
+  slider16,
+  slider17,
+  slider18,
+  slider19,
+  slider20,
+  slider21,
+  slider22,
+];
+
+export const slideSKItems = [
+  sliderSK1,
+  sliderSK2,
+  sliderSK3,
+  sliderSK4,
+  sliderSK5,
+  sliderSK6,
+  sliderSK7,
+  sliderSK8,
+  sliderSK9,
+  sliderSK10,
+  sliderSK11,
+  sliderSK12,
+  sliderSK13,
+  sliderSK14,
+  sliderSK15,
+  sliderSK16,
+  sliderSK17,
+  sliderSK18,
+  sliderSK19,
+  sliderSK20,
+  sliderSK21,
 ];
 
 export const howWorksItems = [

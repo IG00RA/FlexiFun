@@ -19,6 +19,7 @@ import Included from '@/components/Included/Included';
 import Quality from '@/components/Quality/Quality';
 import Questions from '@/components/Questions/Questions';
 import Reasons from '@/components/Reasons/Reasons';
+import { TikTokPixel } from '@/components/TikTokPixel/TikTokPixel';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -144,10 +145,12 @@ export default async function RootLayout({
             <Questions lang={locale} />
           </main>
           <Footer lang={locale} />
+          <div id="__next"></div>
           <div id="portal-root"></div>
           <ToastContainer />
           <Suspense fallback={null}>
             <FacebookPixel />
+            <TikTokPixel />
           </Suspense>
         </body>
       </NextIntlClientProvider>
