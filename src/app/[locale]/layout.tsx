@@ -56,7 +56,7 @@ const localizedMetadata: Record<
 };
 
 export async function generateMetadata(locale: string): Promise<Metadata> {
-  const localizedData = localizedMetadata[locale] || localizedMetadata['sk'];
+  const localizedData = localizedMetadata[locale] || localizedMetadata['uk'];
   return {
     title: localizedData.title,
     description: localizedData.description,
@@ -119,10 +119,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <head>
         <title>{String(metadata.title)}</title>
-        <meta
-          name="description"
-          content={metadata.description || 'FlexiFun - divoká príroda savany'}
-        />
+        <meta name="description" content={metadata.description || ''} />
       </head>
       <NextIntlClientProvider messages={messages}>
         <body
